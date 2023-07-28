@@ -181,6 +181,7 @@ MonoBehaviour:
   canShoot: 1
   Cooldown: 1
   RotationSpeed: 3
+  MovementSpeed: 1
   currentState: 2
   Waypoints:
   - {fileID: 790830063}

@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [Range(0f, 2f)]
     public float Cooldown = 1;
     public float RotationSpeed;
+    public float MovementSpeed;
     bool isTurning = false;
     [Space]
     public States currentState = States.Move;
@@ -72,7 +73,7 @@ public class Enemy : MonoBehaviour
         lookRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
 
-        var step = RotationSpeed * Time.deltaTime;
+        var step = MovementSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, Waypoints[waypointIndex].transform.position, step);
 
         if (Vector3.Distance(transform.position, Waypoints[waypointIndex].transform.position) < 1.5f)
