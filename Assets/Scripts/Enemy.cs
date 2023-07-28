@@ -9,9 +9,16 @@ public class Enemy : MonoBehaviour
     public bool canShoot = true;
     [Range(0f, 2f)]
     public float Cooldown = 1;
+    public float RotationSpeed;
+    bool isTurning = false;
     [Space]
-    public States currentState = States.Idle;
-    public enum States { Idle, Attack, Scout }
+    public States currentState = States.Move;
+    public enum States { Idle, Attack, Move }
+
+    [Space]
+    [Header("Waypoints")]
+    public GameObject[] Waypoints;
+    int waypointIndex;
 
     Animator animator;
 
@@ -33,15 +40,50 @@ public class Enemy : MonoBehaviour
         {
             case States.Idle:
                 animator.SetBool("isAttacking", false);
+                Idle();
                 break;
             case States.Attack:
                 UseAttack();
                 animator.SetBool("isAttacking", true);
                 break;
-            case States.Scout:
+            case States.Move:
+                Move();
                 break;
             default:
                 break;
+        }
+    }
+
+    private void Idle()
+    {
+        animator.SetFloat("mSpeed", 0);
+        if (!isTurning)
+        {
+            StartCoroutine(Wait(1));
+        }
+    }
+
+    private void Move()
+    {
+        Quaternion lookRotation;
+        Vector3 direction;
+
+        direction = (Waypoints[waypointIndex].transform.position - transform.position).normalized;
+        lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
+
+        var step = RotationSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, Waypoints[waypointIndex].transform.position, step);
+
+        if (Vector3.Distance(transform.position, Waypoints[waypointIndex].transform.position) < 1.5f)
+        {
+            waypointIndex += 1;
+            if (waypointIndex > Waypoints.Length - 1)
+            {
+                waypointIndex = 0;
+            }
+
+            currentState = States.Idle;
         }
     }
 
@@ -50,8 +92,8 @@ public class Enemy : MonoBehaviour
         if (canShoot)
         {
             GameObject tempBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            tempBullet.GetComponent<Rigidbody>().AddForce(tempBullet.transform.forward * 50);
-            Destroy(tempBullet,10);
+            tempBullet.GetComponent<Rigidbody>().AddForce(tempBullet.transform.TransformDirection(transform.forward) * 150);
+            Destroy(tempBullet, 10);
             StartCoroutine(Reload());
         }
     }
@@ -61,6 +103,15 @@ public class Enemy : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds(Cooldown);
         canShoot = true;
+    }
+
+    private IEnumerator Wait(float time)
+    {
+        isTurning = true;
+        yield return new WaitForSeconds(time);
+        animator.SetFloat("mSpeed", 1);
+        currentState = States.Move;
+        isTurning = false;
     }
 
     private void OnTriggerStay(Collider other)
