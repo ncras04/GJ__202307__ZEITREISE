@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Countdown;
 
 public class Timer : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         m_timerText = GetComponent<TextMeshProUGUI>();
+
         m_timer = 0.0f;   
     }
 
@@ -20,6 +22,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         m_timer += Time.deltaTime;
+
         DisplayTime();
     }
 

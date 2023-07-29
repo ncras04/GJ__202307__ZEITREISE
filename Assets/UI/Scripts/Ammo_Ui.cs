@@ -20,8 +20,8 @@ public class Ammo_Ui : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_ammoText = GetComponent<TextMeshProUGUI>();
-        m_bullet = GetComponent<UI_Bullet>();
+        m_ammoText = GetComponentInChildren<TextMeshProUGUI>();
+        m_bullet = GetComponentInChildren<UI_Bullet>();
 
         m_ammoText.text = m_inventory.Ammonition.ToString();
         m_ammo = m_inventory.Ammonition;
@@ -43,15 +43,18 @@ public class Ammo_Ui : MonoBehaviour
 
         if(m_isOutOfAmmo || m_AmmoIsReached)
         {
-            m_bullet.ResetColor();
             m_isOutOfAmmo =false;
+            m_bullet.IsGlowingRed = false;
             m_AmmoIsReached=false;
+            m_bullet.IsGlowingWhite = false;
+            m_bullet.ResetColor();
         }
     }
 
     private void OnAmmoRestocked()
     {
-        
+        m_bullet.IsGlowingWhite = true;
+        m_AmmoIsReached = true;
     }
 
     private void OnOutOfAmmo()
@@ -71,7 +74,7 @@ public class Ammo_Ui : MonoBehaviour
         m_ammo--;
         OnAmmonitionChanged(m_ammo);
 
-        if (m_ammo == 0)
+        if (m_ammo <= 0)
             OnOutOfAmmo();
     }
 }
