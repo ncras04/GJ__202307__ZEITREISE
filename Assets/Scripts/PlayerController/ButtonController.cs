@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ButtonController : MonoBehaviour
 {
     [SerializeField, Range(0f, 1f)] float triggerRange = 0.6f;
     [SerializeField] float triggerVelocity = 10f;
+    [SerializeField] UnityEvent onButtontTriggerEvent;
+
     private void Awake()
     {
         triggerVelocity *= triggerVelocity;
@@ -15,12 +18,11 @@ public class ButtonController : MonoBehaviour
     {
         if(other.TryGetComponent(out PlayerController player))
         {
-            if(Vector2.Dot((player.transform.position - transform.position).normalized, transform.up) > triggerRange && player.Rb.velocity.sqrMagnitude > triggerVelocity)
+            if(Vector2.Dot(player.Rb.velocity * -1, Vector2.up) > triggerRange)
             {
                 Debug.Log("playervelo: " + player.Rb.velocity.magnitude);
+                onButtontTriggerEvent?.Invoke();
             }
-            //if(Vector2.Dot(transform.up, (transform.position - player.transform.position).normalized))
-
             Debug.Log(Vector2.Dot((player.transform.position - transform.position).normalized, transform.up));
         }
     }
