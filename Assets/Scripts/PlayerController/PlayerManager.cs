@@ -16,6 +16,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private CinemachineTargetGroup targetGroup;
 
+    public bool IsSwapped { get => isSwapped; set => isSwapped = value; }
+
     public event Action<int> OnNextPlayerJoined;
          
     private void Awake()
