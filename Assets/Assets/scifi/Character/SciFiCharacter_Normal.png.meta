@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Assets/239-2395591_lens-dirt-png-image-free-library-transparent-lens.png.meta
-guid: 8d5ad2c30bb2f1e4aa7bc650efc26d1b
-========
-guid: 7f9c5bdb6748c9f459698d0e74b31e7f
->>>>>>>> origin/patrick2:Assets/Assets/scifi/Floor/SciFIFloor.fbm/SciFIFloor_standardSurface1_BaseColor.png.meta
+guid: 7e22dde7f1d84884ab90edae9cc764b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,7 +7,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -58,7 +54,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 1
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
