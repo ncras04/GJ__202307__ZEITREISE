@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 84932e0aed00d2944beae6e1324f74df, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1916,6 +1916,8 @@ MonoBehaviour:
     m_PostInfinity: 0
     m_RotationOrder: 4
   m_glowingValue: 1
+  m_isGlowingRed: 0
+  m_isGlowingWhite: 0
 --- !u!1 &1008175933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,7 +2070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1086752722
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2730,8 +2732,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_inventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
-  m_bulletPicture: {fileID: 902164854}
-  m_isOutOfAmmo: 0
 --- !u!1 &1685819305
 GameObject:
   m_ObjectHideFlags: 0

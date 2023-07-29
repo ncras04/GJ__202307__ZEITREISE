@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Ammo_Ui : MonoBehaviour
 {
     [Header ("Scriptable Objects")]
     public GlobalInventory m_inventory;
 
-    [Header("UI Objects")]
-    [SerializeField]
-    private UI_Bullet m_bulletPicture = null;
-
     private TextMeshProUGUI m_ammoText = null;
-
-    [SerializeField]
+    private UI_Bullet m_bullet = null;
+    
     private bool m_isOutOfAmmo = false;
+    private bool m_AmmoIsReached = false;
 
     private int m_ammo = 0;
 
@@ -23,12 +21,14 @@ public class Ammo_Ui : MonoBehaviour
     void Start()
     {
         m_ammoText = GetComponent<TextMeshProUGUI>();
+        m_bullet = GetComponent<UI_Bullet>();
 
         m_ammoText.text = m_inventory.Ammonition.ToString();
         m_ammo = m_inventory.Ammonition;
 
         m_inventory.OnAmmonitionChanged += OnAmmonitionChanged;
         m_inventory.OnOutOfAmmo += OnOutOfAmmo;
+        m_inventory.OnAmmoRestocked += OnAmmoRestocked;
     }
 
     // Update is called once per frame
@@ -41,16 +41,22 @@ public class Ammo_Ui : MonoBehaviour
     {
         m_ammoText.text = _value.ToString();
 
-        if(m_isOutOfAmmo)
+        if(m_isOutOfAmmo || m_AmmoIsReached)
         {
-            m_bulletPicture.ResetColor();
+            m_bullet.ResetColor();
             m_isOutOfAmmo =false;
+            m_AmmoIsReached=false;
         }
+    }
+
+    private void OnAmmoRestocked()
+    {
+        
     }
 
     private void OnOutOfAmmo()
     {
-        m_bulletPicture.IsGlowingRed = true;
+        m_bullet.IsGlowingRed = true;
         m_isOutOfAmmo = true;
     }
 
