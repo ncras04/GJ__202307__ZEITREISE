@@ -41,7 +41,35 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        return;
+        CheckStatus();
         ExecuteStates();
+    }
+
+    private void CheckStatus()
+    {
+        if (EnemyOnTop)
+        {
+            if (ReturnDistance(playerManager.GetTopPlayer(true).gameObject, gameObject) < ViewRange)
+            {
+                currentState = States.Attack;
+            }
+            else
+            {
+                currentState = States.Move;
+            }
+        }
+        else
+        {
+            if (ReturnDistance(playerManager.GetTopPlayer(false).gameObject, gameObject) < ViewRange)
+            {
+                currentState = States.Attack;
+            }
+            else
+            {
+                currentState = States.Move;
+            }
+        }
     }
 
     private void ExecuteStates()
@@ -128,6 +156,13 @@ public class Enemy : MonoBehaviour
         isTurning = false;
     }
 
+    float ReturnDistance(GameObject a, GameObject b)
+    {
+        return Vector3.Distance(a.transform.position, b.transform.position);
+    }
+
+    #region Obsolte
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player1" || other.tag == "Player2")
@@ -143,11 +178,7 @@ public class Enemy : MonoBehaviour
             currentState = States.Idle;
         }
     }
-
-    float ReturnDistance(GameObject a, GameObject b)
-    {
-        return Vector3.Distance(a.transform.position, b.transform.position);
-    }
+    #endregion
 
     private void OnDrawGizmosSelected()
     {
