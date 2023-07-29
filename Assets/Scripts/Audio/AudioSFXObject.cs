@@ -21,10 +21,13 @@ namespace Audio
         private void Start()
         {
             Transform parent;
+
             if (transform.parent is not null)
             {
                 parent = transform.parent;
-                parent.AddComponent<AudioSourceSaver>();
+
+                if (!parent.GetComponent<AudioSourceSaver>())
+                    parent.AddComponent<AudioSourceSaver>();
             }
 
         }
@@ -42,7 +45,7 @@ namespace Audio
             {
                 transform.SetParent(null);
                 m_pool.Release(gameObject);
-            }    
+            }
         }
     }
 }

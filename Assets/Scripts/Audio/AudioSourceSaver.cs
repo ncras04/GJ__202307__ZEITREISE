@@ -1,15 +1,22 @@
 using Audio;
 using UnityEngine;
+using System;
 
 public class AudioSourceSaver : MonoBehaviour
 {
+
     private void OnDisable()
     {
-        Transform tmp = GetComponentInChildren<AudioSource>().transform;
-        AudioSFXObject obj = tmp.GetComponent<AudioSFXObject>();
+        AudioSource[] tmp = GetComponentsInChildren<AudioSource>();
 
-        obj.Source.Stop();
-        tmp.SetParent(null);
+        if (tmp is not null)
+        {
+            for (int i = 0; i < tmp.Length; i++)
+            {
+                AudioSFXObject obj = tmp[i].GetComponent<AudioSFXObject>();
+                obj.Source.Stop();
+                tmp[i].transform.SetParent(null);
+            }
+        }
     }
-
 }
