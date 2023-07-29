@@ -58,10 +58,11 @@ public class Enemy : MonoBehaviour
             {
                 currentState = States.Attack;
             }
-            else
-            {
-                currentState = States.Idle;
-            }
+            //else
+            //{
+            //    if (currentState == States.Idle) return;
+            //    currentState = States.Idle;
+            //}
         }
         else
         {
@@ -69,10 +70,11 @@ public class Enemy : MonoBehaviour
             {
                 currentState = States.Attack;
             }
-            else
-            {
-                currentState = States.Idle;
-            }
+            //else
+            //{
+            //    if (currentState == States.Idle) return;
+            //    currentState = States.Idle;
+            //}
         }
     }
 
@@ -100,6 +102,7 @@ public class Enemy : MonoBehaviour
     private void Idle()
     {
         animator.SetFloat("mSpeed", 0);
+
         if (!isTurning)
         {
             StartCoroutine(Wait(1.5f));
@@ -137,9 +140,13 @@ public class Enemy : MonoBehaviour
             if (canShoot)
             {
                 GameObject projectile = Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
-                projectile.transform.LookAt(victim.transform.position);
+                projectile.transform.LookAt(victim.transform.position + new Vector3(0, victim.transform.localScale.y / 2,0));
                 StartCoroutine(Reload());
             }
+        }
+        else
+        {
+            currentState = States.Idle;
         }
     }
 
@@ -163,6 +170,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator Wait(float time)
     {
         isTurning = true;
+        Debug.Log("Turn");
         yield return new WaitForSeconds(time);
 
         currentState = States.Move;
