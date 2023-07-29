@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public bool canShoot = true;
     [Range(0f, 2f)]
     public float Cooldown = 1;
+    public float ViewRange = 10;
     public float RotationSpeed;
     public float MovementSpeed;
     bool isTurning = false;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     [Space]
     public States currentState = States.Move;
     public enum States { Idle, Attack, Move }
+    public bool EnemyOnTop = true;
 
     [Space]
     [Header("Waypoints")]
@@ -28,9 +30,9 @@ public class Enemy : MonoBehaviour
 
     // The Bullt to Spawn
     public GameObject bullet;
-    public GameObject victim;
-
-    public bool isSwapped = true;
+    [SerializeField]
+    private GameObject victim;
+    public PlayerManager playerManager;
 
     private void Awake()
     {
@@ -97,16 +99,9 @@ public class Enemy : MonoBehaviour
 
     private void UseAttack()
     {
-        if (!isSwapped)
-        {
-            victim = GameObject.FindGameObjectWithTag("Player1");
-        }
-        else
-        {
-            victim = GameObject.FindGameObjectWithTag("Player2");
-        }
+        victim = EnemyOnTop ? playerManager.GetTopPlayer(true).gameObject : playerManager.GetTopPlayer(false).gameObject;
 
-        if (Distance(victim, gameObject) < 15)
+        if (ReturnDistance(victim, gameObject) < ViewRange)
         {
             if (canShoot)
             {
@@ -149,8 +144,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    float Distance(GameObject a, GameObject b)
+    float ReturnDistance(GameObject a, GameObject b)
     {
         return Vector3.Distance(a.transform.position, b.transform.position);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, ViewRange);
     }
 }
