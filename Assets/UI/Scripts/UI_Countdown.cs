@@ -12,7 +12,7 @@ public class UI_Countdown : MonoBehaviour
 
     [Header("Countdown")]
     [SerializeField]
-    private float m_timeForCountdown = 5.0f;
+    private float m_timeForCountdown = 3.0f;
 
     [Header("Values")]
     [SerializeField]
@@ -32,8 +32,8 @@ public class UI_Countdown : MonoBehaviour
         m_CountdownText = GetComponentInChildren<TextMeshProUGUI>();
         m_CountdownText.text = string.Format("{0:0}", m_timeForCountdown);
 
-        //GameManager.Instance.TimeManager.OnTimerStarted += OnTimerStarted;
-        //GameManager.Instance.TimeManager.OnTimerEnds += OnTimerEnds;
+        GameManager.Instance.TimeManager.OnTimerStarted += OnTimerStarted;
+        GameManager.Instance.TimeManager.OnTimerEnds += OnTimerEnds;
     }
 
     private void OnTimerStarted()
@@ -49,10 +49,10 @@ public class UI_Countdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //m_timeForCountdown -= GameManager.Instance.TimeManager.Timer;
+        m_timeForCountdown = (3 - GameManager.Instance.TimeManager.Timer);
         //m_CountdownText.text = string.Format("{0:0}", GameManager.Instance.TimeManager.Timer.ToString());
 
-        m_timeForCountdown -= Time.deltaTime;
+        //m_timeForCountdown -= Time.deltaTime;
         var seconds = m_timeForCountdown % 60;
         m_CountdownText.text = string.Format("{0:0}", seconds);
 
@@ -61,9 +61,5 @@ public class UI_Countdown : MonoBehaviour
             m_graphValue = m_animationCurve.Evaluate(Time.time);
             m_CountdownText.fontSize = Mathf.Lerp(m_minFontSize, m_maxFontSize, m_graphValue);
         }
-
-        if(m_timeForCountdown <= 0)
-            OnTimerEnds();
-
     }
 }

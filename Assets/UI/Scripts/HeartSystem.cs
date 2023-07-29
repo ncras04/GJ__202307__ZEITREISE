@@ -6,30 +6,27 @@ using UnityEngine.UI;
 
 public class HeartSystem : MonoBehaviour
 {
-    [Header ("Scriptable Objects")]
-    public GlobalInventory m_globalInventory;
+    [Header("Scriptable Objects")] public GlobalInventory m_globalInventory;
 
-    [Header ("Hearts")]
-    [SerializeField]
-    private GameObject m_lifeHearts = null;
-    [SerializeField]
-    private GameObject m_loosingHearts = null;
-    [SerializeField]
-    private float m_blinkingTime = 5.0f;
+    [Header("Hearts")] [SerializeField] private GameObject m_lifeHearts = null;
+    [SerializeField] private GameObject m_loosingHearts = null;
+    [SerializeField] private float m_blinkingTime = 5.0f;
 
-    [Header("UI Panels")]
-    [SerializeField]
-    private GameObject m_failedPanel = null;
+    [Header("UI Panels")] [SerializeField] private GameObject m_failedPanel = null;
 
     private List<GameObject> m_lifehearts = new List<GameObject>();
     private List<BlinkingHeartPart> m_loosehearts = new List<BlinkingHeartPart>();
 
     private void Start()
     {
-        m_failedPanel.SetActive (false);
-        m_globalInventory.ResetData ();
+        if (m_failedPanel)
+        {
+            m_failedPanel.SetActive(false);
+        }
 
-        for (int i = 0; i < (int)m_globalInventory.Health * 2 - 1; i += 2)
+        //m_globalInventory.ResetData();
+
+        for (int i = 0; i < (int) m_globalInventory.Health * 2 - 1; i += 2)
         {
             if (m_lifeHearts.transform.GetChild(i).gameObject != null)
             {
@@ -42,7 +39,6 @@ public class HeartSystem : MonoBehaviour
             {
                 break;
             }
-
         }
 
         m_globalInventory.OnHealthChanged += Damage;
@@ -52,7 +48,6 @@ public class HeartSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     private void Damage(float _damageAmount)
@@ -67,17 +62,18 @@ public class HeartSystem : MonoBehaviour
 
                 m_loosehearts[i].BlinkingTime = m_blinkingTime;
                 m_loosehearts[i].IsBlinking = true;
-                
-                if(_damageAmount > 0.5 && i > 0)
+
+                if (_damageAmount > 0.5 && i > 0)
                 {
-                    for(int j = 1; j < _damageAmount*2; j++)
+                    for (int j = 1; j < _damageAmount * 2; j++)
                     {
                         Destroy(m_lifehearts[i - j].gameObject);
 
-                        m_loosehearts[i-j].BlinkingTime = m_blinkingTime;
-                        m_loosehearts[i-j].IsBlinking = true;
+                        m_loosehearts[i - j].BlinkingTime = m_blinkingTime;
+                        m_loosehearts[i - j].IsBlinking = true;
                     }
                 }
+
                 break;
             }
         }
