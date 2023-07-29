@@ -4,13 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
   - Player1
   - Player2
   - Enemy
-=======
   - AudioSFXManager
->>>>>>> b9a59039f6610b764ba2ee75109f684283e096dd
   layers:
   - Default
   - TransparentFX
