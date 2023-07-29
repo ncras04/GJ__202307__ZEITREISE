@@ -163,8 +163,16 @@ MonoBehaviour:
   maxVelocity: 10
   movement: {x: 0, y: 0}
   jumpForce: 10
+  jumpForceUpMultiplier: 10
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   maxNumberOfJumps: 1
   fallSpeedMultiplier: 5
+  jumptTime: 0.5
   dashDuration: 0.4
   dashForce: 15
   dashCurve:

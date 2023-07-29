@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // PlayerManager.
+        PlayerManager.OnNextPlayerJoined += OnPlayerJoined;
     }
 
     private void OnPlayerJoined(int playerAmount)
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+
         
         TimeManager.SetTimer(countDownTime);
         TimeManager.OnTimerEnds += TimeManagerOnOnTimerEnds;
