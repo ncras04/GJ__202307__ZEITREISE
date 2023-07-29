@@ -138,11 +138,7 @@ public class PlayerController : MonoBehaviour
         {
             Rb.AddForce(Vector2.down * fallSpeedMultiplier);
         }
-
-        if (rb.velocity.magnitude > maxVelocity)
-        {
-            rb.velocity = rb.velocity.normalized * maxVelocity;
-        }
+        
         //var tmp = rb.velocity.normalized;
         // rb.velocity = Vector3.Min(rb.velocity, tmp * maxVelocity);
     }

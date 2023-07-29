@@ -51,9 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  maxVelocity: 10
-  movement: {x: 0, y: 0}
-  jumpForce: 20
+  maxXVelocity: 12
   jumpForceUpMultiplier: 26.5
   jumpCurve:
     serializedVersion: 2
@@ -81,7 +79,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxNumberOfJumps: 1
   fallSpeedMultiplier: 55
-  jumptTime: 0.5
+  jumpTime: 0.5
+  dustLandPrefab: {fileID: 6680881829282734981, guid: dc9cb1253cc24ef4191da177f69d0fa4,
+    type: 3}
   dashDuration: 0
   dashForce: 0
   dashCurve:
@@ -118,7 +118,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dashCooldown: 1
-  dashDirection: {x: 0, y: 0}
   physicMaterial: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49, type: 2}
 --- !u!114 &753658066792147393
 MonoBehaviour:

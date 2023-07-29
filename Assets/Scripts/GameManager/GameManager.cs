@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     {
         foreach (var player in FindObjectsOfType<PlayerController>())
         {
-            Debug.Log("Penis", player);
             player.GetComponent<PlayerInput>().DeactivateInput();
         }
         
