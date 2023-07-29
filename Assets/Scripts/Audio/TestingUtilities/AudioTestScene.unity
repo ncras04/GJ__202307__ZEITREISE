@@ -270,11 +270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab12f822cdf4cb46b54938c8a357933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pitchEffect: 0.1
   m_soundFXOutput: {fileID: 3588158682490759412, guid: 933887d46de6e464ca60f310e4182cba,
     type: 2}
   m_poolObjectPrefab: {fileID: 7461917967294825144, guid: 8f0d434a1c934cb4496170e093c627b8,
     type: 3}
-  m_maxPoolSize: 10
+  m_maxPoolSize: 5
   m_requests: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53, type: 2}
 --- !u!4 &705749227
 Transform:
@@ -320,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d04c8ed404074e4090ce75314ce8a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_soundRequests: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53, type: 2}
+  SFX: {fileID: 11400000, guid: 6667cf6279d5ad14dbc3091bb9cd7e53, type: 2}
   m_testSound: {fileID: 11400000, guid: 14ea20af2f5de9642bf57a0f4b49aee0, type: 2}
 --- !u!4 &1039960951
 Transform:
