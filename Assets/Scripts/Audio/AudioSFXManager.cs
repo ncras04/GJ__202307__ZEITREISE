@@ -82,9 +82,23 @@ public class AudioSFXManager : MonoBehaviour
 
         tmpSource.outputAudioMixerGroup = m_soundFXOutput;
 
-        tmpSource.clip = _request.Sound.Clips[0];
+        if (_request.Sound.Clips.Length > 1)
+        {
+            int rnd = Random.Range(0, _request.Sound.Clips.Length - 1);
+
+            if (rnd == _request.Sound.LastPlayedClip)
+            {
+                if(rnd == 0)
+                    tmpSource.clip = _request.Sound.Clips[1];
+                else
+                    tmpSource.clip = _request.Sound.Clips[_request.Sound.LastPlayedClip - 1];
+            }
+        }
+        else
+            tmpSource.clip = _request.Sound.Clips[0];
+
         tmpSource.volume = _request.Sound.Volume;
-        tmpSource.spatialBlend = _request.Is2D? 0.0f : 1.0f;
+        tmpSource.spatialBlend = _request.Is2D ? 1.0f : 0.0f;
 
         tmpSource.Play();
 

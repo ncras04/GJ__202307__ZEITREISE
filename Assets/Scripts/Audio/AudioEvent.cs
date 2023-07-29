@@ -14,6 +14,7 @@ namespace Audio
     [CreateAssetMenu(fileName = "New AudioEvent", menuName = "Data/Audio/AudioEvent", order = 0)]
     public class AudioEvent : ScriptableObject
     {
+        public int LastPlayedClip = 0;
         public float Volume => m_volume;
         public AudioClip[] Clips => m_clips;
         public EMixerOutput MixerOutput => m_mixerOutput;
