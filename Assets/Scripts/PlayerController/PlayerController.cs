@@ -9,11 +9,17 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement related:")]
     [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float maxVelocity = 8f;
     public Vector2 movement = Vector2.zero;
     [Header("Jump related:")]
     [SerializeField] float jumpForce = 10f;
+    [SerializeField] float jumpForceUpMultiplier = 10f;
+    [SerializeField] AnimationCurve jumpCurve;
     [SerializeField] int maxNumberOfJumps = 1;
     [SerializeField] float fallSpeedMultiplier = 5f;
+    [SerializeField] float jumpTime = .5f;
+    float jumpTimer;
+    public bool fallFaster;
     int currentNumberOfJumps;
     bool canJump = true;
     [Header("Dash related:")]
@@ -39,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public event Action<bool> OnSwappingCall;
     public bool CanSwap { get; set; } = true;
     public Rigidbody Rb { get => rb; set => rb = value; }
+    //public bool FallFaster { get => fallFaster; set => fallFaster = value; }
 
     bool wantsToSwap;
 
@@ -65,9 +72,18 @@ public class PlayerController : MonoBehaviour
         moveAction = actionMap.FindAction("Move");
         moveAction.performed += (context) => { 
             movement.x = context.ReadValue<Vector2>().x;
-            dashDirection = movement; 
+            dashDirection = movement;
+            // Check if rotation really works...
+            if (movement.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            else if (movement.x < 0)
+                transform.rotation = Quaternion.Euler(0f, -90f, 0f);
         };
-        moveAction.canceled += (context) => { movement = Vector2.zero; };
+        moveAction.canceled += (context) => {
+            // Check if rotation really works...
+            if (movement.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            else if (movement.x < 0)
+                transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+            movement = Vector2.zero; };
         moveAction.Enable();
 
         jumpAction = actionMap.FindAction("Jump");
@@ -105,10 +121,17 @@ public class PlayerController : MonoBehaviour
     {
         // Move the player.
         Rb.AddForce(movement * movementSpeed);
-        if (Rb.velocity.y < 0f)
+        if (fallFaster)
         {
             Rb.AddForce(Vector2.down * fallSpeedMultiplier);
+            //rb.velocity += fallSpeedMultiplier * Time.deltaTime * Physics.gravity.y * Vector3.up;
         }
+        // Make better clamp!
+        //if(rb.velocity.magnitude > maxVelocity) 
+        //{ 
+        //    rb.velocity = rb.velocity.normalized * maxVelocity;
+        //}
+
     }
 
     #region Interaction
@@ -167,10 +190,29 @@ public class PlayerController : MonoBehaviour
     {
         if (canJump && currentNumberOfJumps > 0)
         {
-            Jump();
+
+            //Jump();
+            //Vector3 tmp = new Vector3(0f,MathF.Sqrt( 4f * -2 * Physics.gravity.y));
+            StartCoroutine(StartJumpSpeedUp(jumpTime));
             currentNumberOfJumps--;
             //canJump = currentNumberOfJumps <= 0 ? false : true;
         }
+    }
+
+    IEnumerator StartJumpSpeedUp(float jumpTime)
+    {
+        Rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+        float timer = 0f;
+        //rb.useGravity = false;
+        while (timer < jumpTime)
+        {
+            timer += Time.deltaTime;
+            //rb.velocity += new Vector3(0f, jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier * Time.deltaTime,0f);
+            //rb.AddForce(jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier* Vector2.up);
+            yield return null;
+        }
+        //rb.useGravity = true;
+        fallFaster = true;
     }
     private void Jump()
     {
@@ -182,6 +224,7 @@ public class PlayerController : MonoBehaviour
         canJump = true;
         currentNumberOfJumps = maxNumberOfJumps;
         col.material = null;
+        fallFaster = false;
     }
 
     public void LeftGround()
