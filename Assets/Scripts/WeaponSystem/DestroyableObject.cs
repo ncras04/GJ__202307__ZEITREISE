@@ -13,6 +13,8 @@ namespace WeaponSystem
 
         private float _currentHealth;
 
+        public float CurrentHealth => _currentHealth;
+
         public bool IsDeath => _currentHealth <= 0;
 
         public event Action OnDeath; 
