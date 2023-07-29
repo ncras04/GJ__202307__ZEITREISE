@@ -20,9 +20,6 @@ public class Timer : MonoBehaviour
     void Update()
     {
         m_timer += Time.deltaTime;
-        //Debug.Log(m_timer.ToString());
-
-        //m_timerText.text = m_timer.ToString();
         DisplayTime();
     }
 
@@ -30,8 +27,8 @@ public class Timer : MonoBehaviour
     {
         var minutes = Mathf.FloorToInt(m_timer / 60);
         var seconds = Mathf.FloorToInt(m_timer % 60);
-        var fraction = m_timer % 1 * 1000;
+        var milleseconds = m_timer % 1 * 1000;
 
-        m_timerText.text = string.Format("{0:00}:{1:00},{2:00}", minutes, seconds, fraction);
+        m_timerText.text = string.Format("{0:00}:{1:00},{2:00}", minutes, seconds, milleseconds);
     }
 }
