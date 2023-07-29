@@ -12,7 +12,8 @@ public class Spikes : MonoBehaviour
         if (other.tag == "Player")
         {
             var component = other.gameObject.GetComponent<DestroyableObject>();
-            component.OnHit(component.Currenthealth);
+            component.OnHit(component.CurrentHealth);
+            Debug.Log(component.CurrentHealth);
         }
-    }  
+    }
 }
