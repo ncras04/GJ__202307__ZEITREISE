@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344a5665812f48b4ab47014b2ef25be9, type: 3}
   m_Name: TestEvent
   m_EditorClassIdentifier: 
+  LastPlayedClip: 0
   m_volume: 1
   m_clips:
-  - {fileID: 8300000, guid: 92d5a50447136404ca0e74586110015b, type: 3}
+  - {fileID: 8300000, guid: 198f9d938f77b6b4eb5369dcaeaad0a5, type: 3}
+  m_isPitchAffected: 1

@@ -8,12 +8,16 @@ namespace Audio
         public bool Is2D { get; }
         public Vector3 Position { get; }
         public Transform Parent { get; }
-        private AudioSFXRequest(AudioEvent _sound, bool _is2D = true, Vector3 _position = default, Transform _parent = null)
+        public float PitchOverride { get; }
+        public float VolumeOverride { get; }
+        private AudioSFXRequest(AudioEvent _sound, bool _is2D = true, Vector3 _position = default, Transform _parent = null, float _pitchOverride = 0.0f, float _volumeOverride = 1.0f)
         {
             Sound = _sound;
             Is2D = _is2D;
             Position = _position;
             Parent = _parent;
+            PitchOverride = _pitchOverride;
+            VolumeOverride = _volumeOverride;
         }
 
         public static AudioSFXRequest CreateRequest(AudioEvent _sound, bool _is2D, Vector3 _position, Transform _parent)

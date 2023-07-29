@@ -86,20 +86,15 @@ public class AudioSFXManager : MonoBehaviour
             int rnd = Random.Range(0, tmpEvent.Clips.Length - 1);
 
             if (rnd == tmpEvent.LastPlayedClip)
-            {
-                if(rnd == 0)
-                    tmpSource.clip = tmpEvent.Clips[1];
-                else
-                    tmpSource.clip = tmpEvent.Clips[tmpEvent.LastPlayedClip - 1];
-            }
+                tmpSource.clip = rnd == 0 ? tmpEvent.Clips[1] : tmpEvent.Clips[tmpEvent.LastPlayedClip - 1];
         }
         else
             tmpSource.clip = tmpEvent.Clips[0];
 
         if (tmpEvent.IsPitchAffected)
-            tmpSource.pitch = Random.Range(0.9f, 1.1f);
+            tmpSource.pitch = _request.PitchOverride == 0.0f ? Random.Range(0.9f, 1.1f) : _request.PitchOverride;
 
-        tmpSource.volume = tmpEvent.Volume;
+        tmpSource.volume = tmpEvent.Volume * _request.VolumeOverride;
         tmpSource.spatialBlend = _request.Is2D ? 0.0f : 1.0f;
 
         tmpSource.Play();
