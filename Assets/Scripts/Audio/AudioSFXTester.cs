@@ -12,10 +12,12 @@ public class AudioSFXTester : MonoBehaviour
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
-            m_soundRequests.Add(AudioSFXRequest.CreateRequest(m_testSound, transform));
+            m_soundRequests.Add
+                (AudioSFX.Request(m_testSound, transform));
 
         if (Input.GetKeyDown(KeyCode.D))
-            m_soundRequests.Add(AudioSFXRequest.CreateRequest(m_testSound));
+            m_soundRequests.Add
+                (AudioSFX.Request(m_testSound));
 
         if (Input.GetKeyDown(KeyCode.S))
             Destroy(gameObject);

@@ -68,7 +68,7 @@ public class AudioSFXManager : MonoBehaviour
         m_requests.OnAdd += OnSoundRequest;
     }
 
-    private void OnSoundRequest(AudioSFXRequest _request)
+    private void OnSoundRequest(AudioSFX _request)
     {
         AudioSFXObject tmp = m_pool.Get().GetComponent<AudioSFXObject>();
         AudioSource tmpSource = tmp.Source;
