@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class HeartSystem : MonoBehaviour
 {
-    public GlobalInventory globalInventory;
+    [Header ("Scriptable Objects")]
+    public GlobalInventory m_globalInventory;
 
+    [Header ("Hearts")]
     [SerializeField]
     private GameObject m_lifeHearts = null;
     [SerializeField]
@@ -15,18 +17,19 @@ public class HeartSystem : MonoBehaviour
     [SerializeField]
     private float m_blinkingTime = 5.0f;
 
+    [Header("UI Panels")]
+    [SerializeField]
+    private GameObject m_failedPanel = null;
+
     private List<GameObject> m_lifehearts = new List<GameObject>();
     private List<BlinkingHeartPart> m_loosehearts = new List<BlinkingHeartPart>();
-    private float m_life = 3.0f;
-    //private float m_blinktime = 5.0f;
 
     private void Start()
     {
-        globalInventory.ResetData();
+        m_failedPanel.SetActive (false);
+        m_globalInventory.ResetData ();
 
-        m_life = globalInventory.Health;
-
-        for (int i = 0; i < (int)m_life * 2 - 1; i += 2)
+        for (int i = 0; i < (int)m_globalInventory.Health * 2 - 1; i += 2)
         {
             if (m_lifeHearts.transform.GetChild(i).gameObject != null)
             {
@@ -42,7 +45,8 @@ public class HeartSystem : MonoBehaviour
 
         }
 
-        globalInventory.OnHealthChanged += Damage;
+        m_globalInventory.OnHealthChanged += Damage;
+        m_globalInventory.OnDeath += OnDeath;
     }
 
     // Update is called once per frame
@@ -64,7 +68,7 @@ public class HeartSystem : MonoBehaviour
                 m_loosehearts[i].BlinkingTime = m_blinkingTime;
                 m_loosehearts[i].IsBlinking = true;
                 
-                if(_damageAmount > 0.5)
+                if(_damageAmount > 0.5 && i > 0)
                 {
                     for(int j = 1; j < _damageAmount*2; j++)
                     {
@@ -79,4 +83,11 @@ public class HeartSystem : MonoBehaviour
         }
     }
 
+    private void OnDeath()
+    {
+        //Maybe Red blinking Hearts
+
+        //Failed Screen
+        m_failedPanel.gameObject.SetActive(true);
+    }
 }
