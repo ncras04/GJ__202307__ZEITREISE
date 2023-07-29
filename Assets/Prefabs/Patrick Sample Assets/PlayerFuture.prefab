@@ -162,16 +162,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 20
   maxXVelocity: 12
-  jumpForceUpMultiplier: 10
+  jumpForceUpMultiplier: 105
   jumpCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0001776955
+      value: 1
+      inSlope: -2
+      outSlope: -2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.0066189
+      value: 0
+      inSlope: -0
+      outSlope: -0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxNumberOfJumps: 1
-  fallSpeedMultiplier: 5
-  jumpTime: 0.5
+  fallSpeedMultiplier: 30
+  jumpTime: 0.4
   dustLandPrefab: {fileID: 6680881829282734981, guid: dc9cb1253cc24ef4191da177f69d0fa4,
     type: 3}
   dashDuration: 0.4
@@ -379,9 +397,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.4
-  m_Height: 2
+  m_Height: 1.1261292
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5630646, z: 0}
 --- !u!114 &6065464047100376870
 MonoBehaviour:
   m_ObjectHideFlags: 0
