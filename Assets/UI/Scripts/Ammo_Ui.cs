@@ -37,7 +37,7 @@ public class Ammo_Ui : MonoBehaviour
         
     }
     
-    private void OnAmmonitionChanged(float _value)
+    private void OnAmmonitionChanged(int _value)
     {
         m_ammoText.text = _value.ToString();
 
