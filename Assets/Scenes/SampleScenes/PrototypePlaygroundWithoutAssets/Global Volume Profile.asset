@@ -37,12 +37,12 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.423
+    m_Value: 0.439
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.227
   rounded:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
 --- !u!114 &4386930216817825804
 MonoBehaviour:
@@ -101,11 +101,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   threshold:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 1.35
+    m_Value: 2.16
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -126,7 +126,7 @@ MonoBehaviour:
     m_Value: 6
   dirtTexture:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: 8d5ad2c30bb2f1e4aa7bc650efc26d1b, type: 3}
+    m_Value: {fileID: 8900000, guid: 8d5ad2c30bb2f1e4aa7bc650efc26d1b, type: 3}
     dimension: 1
   dirtIntensity:
     m_OverrideState: 1

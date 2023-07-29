@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     PlayerInputManager inputManager;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private CinemachineTargetGroup targetGroup;
+    [SerializeField] private Transform targetGroupHelper;
 
     public bool IsSwapped { get => isSwapped; set => isSwapped = value; }
 
@@ -23,11 +24,18 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         inputManager = GetComponent<PlayerInputManager>();
-        
-
-        
+   
     }
-    
+
+    private void Update()
+    {
+        if (players != null && players.Length == 2)
+        {
+            targetGroupHelper.position = 
+                new Vector2((players[0].transform.position.x + players[1].transform.position.x) * 0.5f,targetGroupHelper.position.y);
+        }
+    }
+
     public void SwapPlayers()
     {
         if (swappingDesirePlayerOne && swappingDesirePlayerTwo && players[0].CanSwap && players[1].CanSwap)

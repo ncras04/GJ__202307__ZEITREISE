@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Bullet _bulletPrefab;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private GameObject _particleSystem;
     [SerializeField] private GlobalInventory _globalInventory;
     private InputActionAsset _inputActionAsset;
 
@@ -54,7 +54,7 @@ public class Weapon : MonoBehaviour
         
         if (_particleSystem)
         {
-            var particle = Instantiate<ParticleSystem>(_particleSystem, muzzleSpawn.position, muzzleSpawn.rotation);
+            var particle = Instantiate<GameObject>(_particleSystem, muzzleSpawn.position, muzzleSpawn.rotation);
         }
         else
         {
