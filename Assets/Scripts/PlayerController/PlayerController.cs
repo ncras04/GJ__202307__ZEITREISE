@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     public Vector2 movement = Vector2.zero;
     [Header("Jump related:")]
     [SerializeField] float jumpForce = 10f;
+    [SerializeField] float jumpForceUpMultiplier = 10f;
+    [SerializeField] AnimationCurve jumpCurve;
     [SerializeField] int maxNumberOfJumps = 1;
     [SerializeField] float fallSpeedMultiplier = 5f;
+    [SerializeField] float jumptTime = .5f;
     int currentNumberOfJumps;
     bool canJump = true;
     [Header("Dash related:")]
@@ -66,9 +69,18 @@ public class PlayerController : MonoBehaviour
         moveAction = actionMap.FindAction("Move");
         moveAction.performed += (context) => { 
             movement.x = context.ReadValue<Vector2>().x;
-            dashDirection = movement; 
+            dashDirection = movement;
+            // Check if rotation really works...
+            if (movement.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            else if (movement.x < 0)
+                transform.rotation = Quaternion.Euler(0f, -90f, 0f);
         };
-        moveAction.canceled += (context) => { movement = Vector2.zero; };
+        moveAction.canceled += (context) => {
+            // Check if rotation really works...
+            if (movement.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            else if (movement.x < 0)
+                transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+            movement = Vector2.zero; };
         moveAction.Enable();
 
         jumpAction = actionMap.FindAction("Jump");
@@ -175,10 +187,27 @@ public class PlayerController : MonoBehaviour
     {
         if (canJump && currentNumberOfJumps > 0)
         {
-            Jump();
+
+            //Jump();
+            StartCoroutine(StartJumpSpeedUp(jumptTime));
             currentNumberOfJumps--;
             //canJump = currentNumberOfJumps <= 0 ? false : true;
         }
+    }
+
+    IEnumerator StartJumpSpeedUp(float jumpTime)
+    {
+        //Rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+        float timer = 0f;
+        rb.useGravity = false;
+        while (timer < jumpTime)
+        {
+            timer += Time.deltaTime;
+            //rb.velocity += new Vector3(0f, jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier,0f);
+            rb.AddForce(jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier* Vector2.up);
+            yield return null;
+        }
+        rb.useGravity = true;
     }
     private void Jump()
     {
