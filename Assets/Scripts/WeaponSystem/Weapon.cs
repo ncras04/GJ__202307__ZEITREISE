@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour
             Debug.LogError("No Buller Prefab was set, you idiot");
         }
         
-        if (_bulletPrefab)
+        if (_particleSystem)
         {
             var particle = Instantiate<ParticleSystem>(_particleSystem, muzzleSpawn.position, muzzleSpawn.rotation);
         }
