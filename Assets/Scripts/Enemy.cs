@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public float RotationSpeed;
     public float MovementSpeed;
     bool isTurning = false;
+
     [Space]
     public Transform bulletSpawnPoint;
     [Space]
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
 
+    // The Bullt to Spawn
     public GameObject bullet;
     public GameObject victim;
 
@@ -110,8 +112,6 @@ public class Enemy : MonoBehaviour
             {
                 GameObject projectile = Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
                 projectile.transform.LookAt(victim.transform.position);
-                //Vector3 direction = bulletSpawnPoint.position - victim.transform.position;
-                //projectile.GetComponent<Rigidbody>().velocity = -direction * 5;
                 StartCoroutine(Reload());
             }
         }
