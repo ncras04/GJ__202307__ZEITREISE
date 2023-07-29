@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.Rendering;
 
 namespace Audio
 {
@@ -13,6 +11,7 @@ namespace Audio
         SFX,
     }
 
+    [CreateAssetMenu(fileName = "New AudioEvent", menuName = "Data/Audio/AudioEvent", order = 0)]
     public class AudioEvent : ScriptableObject
     {
         public float Volume => m_volume;
