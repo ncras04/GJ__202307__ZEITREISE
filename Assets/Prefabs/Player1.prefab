@@ -157,10 +157,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 50
+  maxVelocity: 10
   movement: {x: 0, y: 0}
-  jumpForce: 10
+  jumpForce: 20
+  jumpForceUpMultiplier: 10
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.003952767
+      value: 1.1763573
+      inSlope: 0.2447428
+      outSlope: 0.2447428
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.16589804
+    - serializedVersion: 3
+      time: 1.0059605
+      value: 0.814386
+      inSlope: -1.238953
+      outSlope: -1.238953
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10837897
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   maxNumberOfJumps: 1
   fallSpeedMultiplier: 5
+  jumptTime: 0.5
   dashDuration: 0.4
   dashForce: 15
   dashCurve:

@@ -121,13 +121,13 @@ public class PlayerController : MonoBehaviour
         if (Rb.velocity.y < 0f)
         {
             Rb.AddForce(Vector2.down * fallSpeedMultiplier);
+            //rb.velocity += fallSpeedMultiplier * Time.deltaTime * Physics.gravity.y * Vector3.up;
         }
-        if(rb.velocity.magnitude > maxVelocity) 
-        { 
-            rb.velocity = rb.velocity.normalized * maxVelocity;
-        }
-        //var tmp = rb.velocity.normalized;
-        // rb.velocity = Vector3.Min(rb.velocity, tmp * maxVelocity);
+        // Make better clamp!
+        //if(rb.velocity.magnitude > maxVelocity) 
+        //{ 
+        //    rb.velocity = rb.velocity.normalized * maxVelocity;
+        //}
 
     }
 
@@ -189,6 +189,7 @@ public class PlayerController : MonoBehaviour
         {
 
             //Jump();
+            //Vector3 tmp = new Vector3(0f,MathF.Sqrt( 4f * -2 * Physics.gravity.y));
             StartCoroutine(StartJumpSpeedUp(jumptTime));
             currentNumberOfJumps--;
             //canJump = currentNumberOfJumps <= 0 ? false : true;
@@ -197,13 +198,13 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator StartJumpSpeedUp(float jumpTime)
     {
-        //Rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+        Rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
         float timer = 0f;
         rb.useGravity = false;
         while (timer < jumpTime)
         {
             timer += Time.deltaTime;
-            //rb.velocity += new Vector3(0f, jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier,0f);
+            //rb.velocity += new Vector3(0f, jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier * Time.deltaTime,0f);
             rb.AddForce(jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier* Vector2.up);
             yield return null;
         }
