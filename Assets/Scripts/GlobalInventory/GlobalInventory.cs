@@ -62,7 +62,7 @@ public class GlobalInventory : ScriptableObject
 
     public event Action<float> OnHealthChanged;
     public event Action OnDeath;
-    public event Action<float> OnAmmonitionChanged;
+    public event Action<int> OnAmmonitionChanged;
     public event Action OnOutOfAmmo;
     public event Action OnAmmoRestocked;
     public event Action OnAmmoRestockFailed;
