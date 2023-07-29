@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public float MovementSpeed;
     bool isTurning = false;
     [Space]
+    public Transform bulletSpawnPoint;
+    [Space]
     public States currentState = States.Move;
     public enum States { Idle, Attack, Move }
 
@@ -24,6 +26,9 @@ public class Enemy : MonoBehaviour
     Animator animator;
 
     public GameObject bullet;
+    public GameObject victim;
+
+    public bool isSwapped = true;
 
     private void Awake()
     {
@@ -60,7 +65,7 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("mSpeed", 0);
         if (!isTurning)
         {
-            StartCoroutine(Wait(1));
+            StartCoroutine(Wait(.5f));
         }
     }
 
@@ -90,12 +95,25 @@ public class Enemy : MonoBehaviour
 
     private void UseAttack()
     {
-        if (canShoot)
+        if (!isSwapped)
         {
-            GameObject tempBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            tempBullet.GetComponent<Rigidbody>().AddForce(tempBullet.transform.TransformDirection(transform.forward) * 150);
-            Destroy(tempBullet, 10);
-            StartCoroutine(Reload());
+            victim = GameObject.FindGameObjectWithTag("Player1");
+        }
+        else
+        {
+            victim = GameObject.FindGameObjectWithTag("Player2");
+        }
+
+        if (Distance(victim, gameObject) < 15)
+        {
+            if (canShoot)
+            {
+                GameObject projectile = Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
+                projectile.transform.LookAt(victim.transform.position);
+                //Vector3 direction = bulletSpawnPoint.position - victim.transform.position;
+                //projectile.GetComponent<Rigidbody>().velocity = -direction * 5;
+                StartCoroutine(Reload());
+            }
         }
     }
 
@@ -129,5 +147,10 @@ public class Enemy : MonoBehaviour
         {
             currentState = States.Idle;
         }
+    }
+
+    float Distance(GameObject a, GameObject b)
+    {
+        return Vector3.Distance(a.transform.position, b.transform.position);
     }
 }
