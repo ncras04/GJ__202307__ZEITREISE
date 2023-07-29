@@ -19,10 +19,11 @@ namespace Audio
         public EMixerOutput MixerOutput => m_mixerOutput;
 
         [SerializeField]
-        private float m_volume;
+        [Range(0, 1)]
+        private float m_volume = 1.0f;
         [SerializeField]
         private AudioClip[] m_clips;
-        [SerializeField]
+        //[SerializeField]
         private EMixerOutput m_mixerOutput;
     }
 }

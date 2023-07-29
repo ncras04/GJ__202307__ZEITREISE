@@ -4,34 +4,43 @@ using UnityEngine;
 
 namespace Audio
 {
-    public class AudioSFXRequest : MonoBehaviour
+    public class AudioSFXRequest
     {
-        public class SoundRequest
+        public AudioEvent Sound { get; }
+        public bool Is2D { get; }
+        public Vector3 Position { get; }
+        public Transform Parent { get; }
+        private AudioSFXRequest(AudioEvent _sound, bool _is2D = true, Vector3 _position = default, Transform _parent = null)
         {
-            public AudioEvent Sound { get; }
-            public bool Is2D { get; }
-            public Vector3 Position { get; }
-            private SoundRequest(AudioEvent _sound, bool _is2D = true, Vector3 _position = default)
-            {
-                Sound = _sound;
-                Is2D = _is2D;
-                Position = _position;
-            }
+            Sound = _sound;
+            Is2D = _is2D;
+            Position = _position;
+            Parent = _parent;
+        }
 
-            public static SoundRequest CreateRequest(AudioEvent _sound, Vector3 _position, bool _is2D)
-            {
-                return new SoundRequest(_sound, _is2D, _position);
-            }
+        public static AudioSFXRequest CreateRequest(AudioEvent _sound, bool _is2D, Vector3 _position, Transform _parent)
+        {
+            return new AudioSFXRequest(_sound, _is2D, _position);
+        }
 
-            public static SoundRequest CreateRequest(AudioEvent _sound)
-            {
-                return CreateRequest(_sound, Vector3.zero, false);
-            }
+        public static AudioSFXRequest CreateRequest(AudioEvent _sound)
+        {
+            return CreateRequest(_sound, false, Vector3.zero, null);
+        }
 
-            public static SoundRequest CreateRequest(AudioEvent _sound, Vector3 _position)
-            {
-                return CreateRequest(_sound, _position, false);
-            }
+        public static AudioSFXRequest CreateRequest(AudioEvent _sound, bool _is2D)
+        {
+            return CreateRequest(_sound, _is2D, Vector3.zero, null);
+        }
+
+        public static AudioSFXRequest CreateRequest(AudioEvent _sound, Vector3 _position)
+        {
+            return CreateRequest(_sound, false, _position, null);
+        }
+
+        public static AudioSFXRequest CreateRequest(AudioEvent _sound, Vector3 _position, Transform _parent)
+        {
+            return CreateRequest(_sound, false, _position, _parent);
         }
     }
 }

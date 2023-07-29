@@ -7,11 +7,12 @@ using UnityEngine.Pool;
 public class AudioSFXObject : MonoBehaviour
 {
     public AudioSource Source => m_source;
+    public IObjectPool<GameObject> Pool { get => m_pool; set => m_pool = value; }
 
     private AudioSource m_source;
-    public IObjectPool<GameObject> m_pool;
+    private IObjectPool<GameObject> m_pool;
 
-    private void Start()
+    private void Awake()
     {
         m_source = GetComponent<AudioSource>();
     }
