@@ -389,6 +389,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 6208378669232049230, guid: a9de9a7809e10684993a8fcbfe553e23,
     type: 3}
   _particleSystem: {fileID: 0}
+  _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
   muzzleSpawn: {fileID: 7652220649586658582}
   fireRate: 100
 --- !u!1 &7458760475331081783

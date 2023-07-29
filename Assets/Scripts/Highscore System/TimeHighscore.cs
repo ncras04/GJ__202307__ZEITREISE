@@ -32,15 +32,26 @@ public class TimeHighscore : MonoBehaviour
     }
 
     private bool highScoreHasAlreadyBeenLoaded = false;
+    private bool hasStarted;
 
     private void Update()
     {
+        if (!hasStarted)
+        {
+            return;
+        }
+        
         _highscoreTime += Time.deltaTime;
 
         if (_lerpingTime == null)
         {
             _animatedTime += Time.deltaTime;
         }
+    }
+
+    public void StartTimer()
+    {
+        hasStarted = true;
     }
 
     public void AddCustomTime(float amount)
@@ -132,7 +143,7 @@ public class TimeHighscore : MonoBehaviour
 
     private string GetSingleTimeNumber(int number, int numberAmount)
     {
-        if (number < 10 * (numberAmount - 1))
+        if (number < Mathf.Pow(10, (numberAmount - 1)))
         {
             var numberText = number.ToString();
 

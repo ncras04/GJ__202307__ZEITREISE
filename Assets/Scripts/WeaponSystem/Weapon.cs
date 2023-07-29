@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     [Header("References")]
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private GlobalInventory _globalInventory;
     private InputActionAsset _inputActionAsset;
 
     [SerializeField] private Transform muzzleSpawn;
@@ -35,7 +36,7 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        if (!CanFire)
+        if (!CanFire || _globalInventory.Ammonition == 0)
         {
             return;
         }
@@ -59,6 +60,8 @@ public class Weapon : MonoBehaviour
         {
             Debug.LogError("No Particle Prefab was set, you idiot");
         }
+
+        _globalInventory.Ammonition--;
     }
 
     private void Setup()
