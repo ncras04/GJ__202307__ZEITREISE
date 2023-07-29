@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     Vector2 dashDirection = Vector2.zero;
 
     // Make it an event.
-    public Action InteractionHandler;
+    public event Action InteractionHandler;
 
     InputActionAsset inputAsset;
     InputActionMap actionMap;

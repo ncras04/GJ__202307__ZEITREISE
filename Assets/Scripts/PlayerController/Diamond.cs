@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WeaponSystem;
 
-public class Diamond : MonoBehaviour
+public class Diamond : MonoBehaviour, IHittable
 {
     [SerializeField] private GameObject brokenObject;
     [SerializeField] private GameObject shatterEffect;
@@ -56,5 +57,10 @@ public class Diamond : MonoBehaviour
 
         }
         Destroy(rend.gameObject, 0f);
+    }
+
+    public void OnHit(float damage)
+    {
+        Explode(10, transform.position, 0.6f, 2f);
     }
 }
