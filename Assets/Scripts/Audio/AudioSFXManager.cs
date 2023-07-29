@@ -76,12 +76,15 @@ public class AudioSFXManager : MonoBehaviour
         AudioSource tmpSource = tmp.Source;
 
         tmp.transform.position = _request.Position;
+        tmp.transform.SetParent(_request.Parent);
+
         tmp.name = $"{_request.Sound.name}-Sound";
 
         tmpSource.outputAudioMixerGroup = m_soundFXOutput;
 
         tmpSource.clip = _request.Sound.Clips[0];
         tmpSource.volume = _request.Sound.Volume;
+        tmpSource.spatialBlend = _request.Is2D? 0.0f : 1.0f;
 
         tmpSource.Play();
 
