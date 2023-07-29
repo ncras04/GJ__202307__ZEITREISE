@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6017245980801480519}
   - component: {fileID: 5597446825928787694}
   m_Layer: 0
-  m_Name: PlayerPrefab (1)
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,16 +50,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9601fddd169fb904fa732934512d5050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPlayer: {fileID: 0}
   movementSpeed: 60
+  movement: {x: 0, y: 0}
   jumpForce: 10
   maxNumberOfJumps: 1
+  fallSpeedMultiplier: 5
   dashDuration: 1
   dashForce: 10
+  dashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.0620036
+      outSlope: -1.0620036
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49945053
+      value: 0.46958172
+      inSlope: -0.0011657476
+      outSlope: -0.0011657476
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.0596721
+      outSlope: 1.0596721
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   dashCooldown: 1
-  movement: {x: 0, y: 0}
   dashDirection: {x: 0, y: 0}
-  physicMaterial: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49, type: 2}
 --- !u!114 &753658066792147393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +221,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!136 &5597446825928787694
 CapsuleCollider:
@@ -197,7 +230,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3418965140559999531}
-  m_Material: {fileID: 13400000, guid: 70213ebcf5332da4eb24758bcd7ebae4, type: 2}
+  m_Material: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -7,28 +7,29 @@ using UnityEngine.InputSystem;
 [SelectionBase, RequireComponent(typeof(PlayerInput), typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] PlayerController otherPlayer;
     [Header("Movement related:")]
     [SerializeField] float movementSpeed = 5f;
+    public Vector2 movement = Vector2.zero;
+    [Header("Jump related:")]
     [SerializeField] float jumpForce = 10f;
     [SerializeField] int maxNumberOfJumps = 1;
+    [SerializeField] float fallSpeedMultiplier = 5f;
     int currentNumberOfJumps;
     bool canJump = true;
+    [Header("Dash related:")]
     [SerializeField] float dashDuration = 1f;
     [SerializeField] float dashForce = 10f;
+    [SerializeField] AnimationCurve dashCurve;
     [SerializeField] float dashCooldown = 1f;
+    float dashTimer;
     bool canDash = true;
-
-    [Header("Difference related:")]
-    public Action InteractionHandler;
-    Rigidbody rb;
-    public Vector2 movement = Vector2.zero;
     public Vector2 dashDirection = Vector2.zero;
-    
+
+    // Make it an event.
+    public Action InteractionHandler;
 
     InputActionAsset inputAsset;
     InputActionMap actionMap;
-
     InputAction moveAction;
     InputAction jumpAction;
     InputAction swapAction;
@@ -36,19 +37,24 @@ public class PlayerController : MonoBehaviour
     InputAction dashAction;
 
     public event Action<bool> OnSwappingCall;
-
     public bool CanSwap { get; set; } = true;
+    public Rigidbody Rb { get => rb; set => rb = value; }
+
     bool wantsToSwap;
 
+
     [SerializeField] PhysicMaterial physicMaterial;
+    Rigidbody rb;  
     Collider col;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        Rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
 
         // Get the input action.
+        //controls = new PlayerControls();
+        //actionMap = controls.Player;
         inputAsset = GetComponent<PlayerInput>().actions;
         actionMap = inputAsset.FindActionMap("Player");
         actionMap.Enable();
@@ -61,7 +67,6 @@ public class PlayerController : MonoBehaviour
             movement.x = context.ReadValue<Vector2>().x;
             dashDirection = movement; 
         };
-
         moveAction.canceled += (context) => { movement = Vector2.zero; };
         moveAction.Enable();
 
@@ -91,10 +96,19 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void FixedUpdate()
     {
         // Move the player.
-        rb.AddForce(movement * movementSpeed);
+        Rb.AddForce(movement * movementSpeed);
+        if (Rb.velocity.y < 0f)
+        {
+            Rb.AddForce(Vector2.down * fallSpeedMultiplier);
+        }
     }
 
     #region Interaction
@@ -110,26 +124,29 @@ public class PlayerController : MonoBehaviour
         if (canDash)
         {
             canDash = false;
-            rb.useGravity = false;
+            Rb.useGravity = false;
             bool storeJump = canJump;
             canJump = false;
-            rb.AddForce(dashDirection * dashForce, ForceMode.Impulse);
+            //rb.AddForce(dashDirection * dashForce, ForceMode.Impulse);
             // Zero out y velocity.
-            Vector2 velo = rb.velocity;
-            velo.y = 0f;
-            rb.velocity = velo;
+            //Vector2 velo = rb.velocity;
+            //velo.y = 0f;
+            //rb.velocity = velo;
             StartCoroutine(StartDashTimer(dashDuration, storeJump));
         }
     }
 
     IEnumerator StartDashTimer(float dashDuration, bool jumpStore)
     {
-        while (dashDuration > 0)
+        float dashTimer = 0f;
+        while (dashTimer < dashDuration)
         {
-            dashDuration -= Time.deltaTime;
+            dashTimer += Time.deltaTime;
+            Rb.velocity = new Vector2(dashCurve.Evaluate(dashTimer/dashDuration)*dashForce*dashDirection.x, 0f);
+            //dashDuration -= Time.deltaTime;
             yield return null;
         }
-        rb.useGravity = true;
+        Rb.useGravity = true;
         canJump = jumpStore;
         StartCoroutine(StartDashCooldown(dashCooldown));
     }
@@ -152,12 +169,12 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
             currentNumberOfJumps--;
-            canJump = currentNumberOfJumps <= 0 ? false : true;
+            //canJump = currentNumberOfJumps <= 0 ? false : true;
         }
     }
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+        Rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
     }
 
     public void ResetJumps()
