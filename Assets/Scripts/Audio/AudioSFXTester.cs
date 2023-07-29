@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Audio;
-using Unity.VisualScripting;
 
 public class AudioSFXTester : MonoBehaviour
 {
