@@ -11,6 +11,14 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private ParticleSystem interactionParticle;
 
+    [SerializeField] private string ignoredTag;
+
+    public string IgnoredTag
+    {
+        get => ignoredTag;
+        set => ignoredTag = value;
+    }
+
     private Rigidbody _rigidbody;
 
     public event Action OnHittetObject;
@@ -20,13 +28,18 @@ public class Bullet : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Start()
     {
         _rigidbody.AddForce(transform.forward * bulletSpeed);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!string.IsNullOrEmpty(ignoredTag) && other.CompareTag(ignoredTag))
+        {
+            return;
+        }
+        
         Destroy(gameObject);
         var myTransform = transform;
 
