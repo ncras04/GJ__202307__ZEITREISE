@@ -20,17 +20,17 @@ namespace Audio
 
         public static AudioSFXRequest CreateRequest(AudioEvent _sound, bool _is2D, Vector3 _position, Transform _parent)
         {
-            return new AudioSFXRequest(_sound, _is2D, _position);
+            return new AudioSFXRequest(_sound, _is2D, _position, _parent);
         }
 
         public static AudioSFXRequest CreateRequest(AudioEvent _sound)
         {
-            return CreateRequest(_sound, false, Vector3.zero, null);
+            return CreateRequest(_sound, true, Vector3.zero, null);
         }
 
-        public static AudioSFXRequest CreateRequest(AudioEvent _sound, bool _is2D)
+        public static AudioSFXRequest CreateRequest(AudioEvent _sound, Transform _parent)
         {
-            return CreateRequest(_sound, _is2D, Vector3.zero, null);
+            return CreateRequest(_sound, false, _parent.position, _parent);
         }
 
         public static AudioSFXRequest CreateRequest(AudioEvent _sound, Vector3 _position)

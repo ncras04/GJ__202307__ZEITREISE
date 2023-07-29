@@ -74,31 +74,35 @@ public class AudioSFXManager : MonoBehaviour
     {
         AudioSFXObject tmp = m_pool.Get().GetComponent<AudioSFXObject>();
         AudioSource tmpSource = tmp.Source;
+        AudioEvent tmpEvent = _request.Sound;
 
         tmp.transform.position = _request.Position;
         tmp.transform.SetParent(_request.Parent);
 
-        tmp.name = $"{_request.Sound.name}-Sound";
+        tmp.name = $"{tmpEvent.name}-Sound";
 
         tmpSource.outputAudioMixerGroup = m_soundFXOutput;
 
-        if (_request.Sound.Clips.Length > 1)
+        if (tmpEvent.Clips.Length > 1)
         {
-            int rnd = Random.Range(0, _request.Sound.Clips.Length - 1);
+            int rnd = Random.Range(0, tmpEvent.Clips.Length - 1);
 
-            if (rnd == _request.Sound.LastPlayedClip)
+            if (rnd == tmpEvent.LastPlayedClip)
             {
                 if(rnd == 0)
-                    tmpSource.clip = _request.Sound.Clips[1];
+                    tmpSource.clip = tmpEvent.Clips[1];
                 else
-                    tmpSource.clip = _request.Sound.Clips[_request.Sound.LastPlayedClip - 1];
+                    tmpSource.clip = tmpEvent.Clips[tmpEvent.LastPlayedClip - 1];
             }
         }
         else
-            tmpSource.clip = _request.Sound.Clips[0];
+            tmpSource.clip = tmpEvent.Clips[0];
 
-        tmpSource.volume = _request.Sound.Volume;
-        tmpSource.spatialBlend = _request.Is2D ? 1.0f : 0.0f;
+        if (tmpEvent.IsPitchAffected)
+            tmpSource.pitch = Random.Range(0.9f, 1.1f);
+
+        tmpSource.volume = tmpEvent.Volume;
+        tmpSource.spatialBlend = _request.Is2D ? 0.0f : 1.0f;
 
         tmpSource.Play();
 

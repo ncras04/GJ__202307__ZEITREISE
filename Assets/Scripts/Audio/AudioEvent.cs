@@ -17,6 +17,7 @@ namespace Audio
         public int LastPlayedClip = 0;
         public float Volume => m_volume;
         public AudioClip[] Clips => m_clips;
+        public bool IsPitchAffected => m_isPitchAffected;
         public EMixerOutput MixerOutput => m_mixerOutput;
 
         [SerializeField]
@@ -24,6 +25,8 @@ namespace Audio
         private float m_volume = 1.0f;
         [SerializeField]
         private AudioClip[] m_clips;
+        [SerializeField]
+        private bool m_isPitchAffected;
         //[SerializeField]
         private EMixerOutput m_mixerOutput;
     }
