@@ -13,7 +13,7 @@ public class Spikes : MonoBehaviour
         {
             var component = other.gameObject.GetComponent<DestroyableObject>();
             component.OnHit(component.CurrentHealth);
-            Debug.Log(component.CurrentHealth);
+            //Debug.Log(component.CurrentHealth);
         }
     }
 }

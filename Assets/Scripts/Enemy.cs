@@ -8,10 +8,15 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Specs")]
     public bool canShoot = true;
     [Range(0f, 2f)]
+    [Tooltip("The Shoot Cd")]
     public float Cooldown = 1;
+    [Tooltip("Range where the Palyer can be Spotted")]
     public float ViewRange = 10;
-    public float RotationSpeed;
+    [Header("Movement Variables")]
     public float MovementSpeed;
+    public float RotationSpeed;
+
+    // For Extra purposes only
     bool isTurning = false;
 
     [Space]
@@ -30,8 +35,8 @@ public class Enemy : MonoBehaviour
 
     // The Bullt to Spawn
     public GameObject bullet;
-    [SerializeField]
-    private GameObject victim;
+
+    private GameObject victim; // Could be a Waypoint to move to or the Player
     public PlayerManager playerManager;
 
     private void Awake()
@@ -41,7 +46,6 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        return;
         CheckStatus();
         ExecuteStates();
     }
@@ -56,7 +60,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                currentState = States.Move;
+                currentState = States.Idle;
             }
         }
         else
@@ -67,7 +71,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                currentState = States.Move;
+                currentState = States.Idle;
             }
         }
     }
@@ -85,6 +89,7 @@ public class Enemy : MonoBehaviour
                 animator.SetBool("isAttacking", true);
                 break;
             case States.Move:
+                animator.SetBool("isAttacking", false);
                 Move();
                 break;
             default:
@@ -97,37 +102,35 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("mSpeed", 0);
         if (!isTurning)
         {
-            StartCoroutine(Wait(.5f));
+            StartCoroutine(Wait(1.5f));
         }
     }
 
     private void Move()
     {
-        Quaternion lookRotation;
-        Vector3 direction;
+        animator.SetFloat("mSpeed", 1);
 
-        direction = (Waypoints[waypointIndex].transform.position - transform.position).normalized;
-        lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
+        RotateToVictim(Waypoints[waypointIndex]);
 
         var step = MovementSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, Waypoints[waypointIndex].transform.position, step);
 
         if (Vector3.Distance(transform.position, Waypoints[waypointIndex].transform.position) < 1.5f)
         {
+            currentState = States.Idle;
             waypointIndex += 1;
             if (waypointIndex > Waypoints.Length - 1)
             {
                 waypointIndex = 0;
             }
-
-            currentState = States.Idle;
         }
     }
 
     private void UseAttack()
     {
         victim = EnemyOnTop ? playerManager.GetTopPlayer(true).gameObject : playerManager.GetTopPlayer(false).gameObject;
+
+        RotateToVictim(victim);
 
         if (ReturnDistance(victim, gameObject) < ViewRange)
         {
@@ -138,6 +141,16 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(Reload());
             }
         }
+    }
+
+    void RotateToVictim(GameObject Victim)
+    {
+        Quaternion lookRotation;
+        Vector3 direction;
+
+        direction = (Victim.transform.position - transform.position).normalized;
+        lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
     }
 
     private IEnumerator Reload()
@@ -151,7 +164,7 @@ public class Enemy : MonoBehaviour
     {
         isTurning = true;
         yield return new WaitForSeconds(time);
-        animator.SetFloat("mSpeed", 1);
+
         currentState = States.Move;
         isTurning = false;
     }
@@ -160,28 +173,27 @@ public class Enemy : MonoBehaviour
     {
         return Vector3.Distance(a.transform.position, b.transform.position);
     }
-
-    #region Obsolte
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player1" || other.tag == "Player2")
-        {
-            currentState = States.Attack;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player1" || other.tag == "Player2")
-        {
-            currentState = States.Idle;
-        }
-    }
-    #endregion
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, ViewRange);
     }
+
+    #region Obsolte
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.tag == "Player1" || other.tag == "Player2")
+    //    {
+    //        currentState = States.Attack;
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player1" || other.tag == "Player2")
+    //    {
+    //        currentState = States.Idle;
+    //    }
+    //}
+    #endregion 
 }
