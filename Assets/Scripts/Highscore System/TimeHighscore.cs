@@ -24,8 +24,9 @@ public class TimeHighscore : MonoBehaviour
         {
             if (!highScoreHasAlreadyBeenLoaded)
             {
-                Load();       
+                Load();
             }
+
             return _highScores;
         }
     }
@@ -36,7 +37,7 @@ public class TimeHighscore : MonoBehaviour
     {
         _highscoreTime += Time.deltaTime;
 
-        if (_lerpingTime != null)
+        if (_lerpingTime == null)
         {
             _animatedTime += Time.deltaTime;
         }
@@ -78,7 +79,7 @@ public class TimeHighscore : MonoBehaviour
         var _highscoreList = _highScores.ToList();
 
         _highscoreList = _highScores.OrderBy(s => s.Key).ToList();
-        
+
         _highScores.Clear();
 
         int index = 0;
@@ -91,10 +92,10 @@ public class TimeHighscore : MonoBehaviour
 
             index++;
         }
-        
+
         PlayerPrefs.SetInt("amounts", index);
         PlayerPrefs.Save();
-        
+
         highScoreHasAlreadyBeenLoaded = false;
     }
 
@@ -105,7 +106,7 @@ public class TimeHighscore : MonoBehaviour
             Debug.LogWarning("No Highscores found!");
             return;
         }
-        
+
         _highScores = new Dictionary<float, string>();
         int amount = PlayerPrefs.GetInt("amounts");
 
@@ -121,17 +122,26 @@ public class TimeHighscore : MonoBehaviour
 
     public string GetDisplayTime()
     {
-        int minutes = (int) (animationTime / 60);
-        int seconds = (int) (animationTime % 60);
+        int minutes = (int) (_animatedTime / 60);
+        int seconds = (int) (_animatedTime % 60);
+        int milliseconds = (int)((_animatedTime % 1)* 1000);
 
-        return $"{GetSingleTimeNumber(minutes)}:{GetSingleTimeNumber(seconds)}";
+        return
+            $"{GetSingleTimeNumber(minutes, 2)}:{GetSingleTimeNumber(seconds, 2)}:{GetSingleTimeNumber(milliseconds, 3)}";
     }
 
-    private string GetSingleTimeNumber(int number)
+    private string GetSingleTimeNumber(int number, int numberAmount)
     {
-        if (number < 10)
+        if (number < 10 * (numberAmount - 1))
         {
-            return "0" + number.ToString();
+            var numberText = number.ToString();
+
+            while (numberText.Length < numberAmount)
+            {
+                numberText = "0" + numberText;
+            }
+
+            return numberText;
         }
         else
         {
@@ -141,6 +151,9 @@ public class TimeHighscore : MonoBehaviour
 
     private void OnDestroy()
     {
-        StopCoroutine(_lerpingTime);
+        if (_lerpingTime != null)
+        {
+            StopCoroutine(_lerpingTime);
+        }
     }
 }
