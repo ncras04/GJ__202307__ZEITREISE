@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimationCurve jumpCurve;
     [SerializeField] int maxNumberOfJumps = 1;
     [SerializeField] float fallSpeedMultiplier = 5f;
-    [SerializeField] float jumptTime = .5f;
+    [SerializeField] float jumpTime = .5f;
+    float jumpTimer;
+    public bool fallFaster;
     int currentNumberOfJumps;
     bool canJump = true;
     [Header("Dash related:")]
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public event Action<bool> OnSwappingCall;
     public bool CanSwap { get; set; } = true;
     public Rigidbody Rb { get => rb; set => rb = value; }
+    //public bool FallFaster { get => fallFaster; set => fallFaster = value; }
 
     bool wantsToSwap;
 
@@ -118,7 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         // Move the player.
         Rb.AddForce(movement * movementSpeed);
-        if (Rb.velocity.y < 0f)
+        if (fallFaster)
         {
             Rb.AddForce(Vector2.down * fallSpeedMultiplier);
             //rb.velocity += fallSpeedMultiplier * Time.deltaTime * Physics.gravity.y * Vector3.up;
@@ -190,7 +193,7 @@ public class PlayerController : MonoBehaviour
 
             //Jump();
             //Vector3 tmp = new Vector3(0f,MathF.Sqrt( 4f * -2 * Physics.gravity.y));
-            StartCoroutine(StartJumpSpeedUp(jumptTime));
+            StartCoroutine(StartJumpSpeedUp(jumpTime));
             currentNumberOfJumps--;
             //canJump = currentNumberOfJumps <= 0 ? false : true;
         }
@@ -200,15 +203,16 @@ public class PlayerController : MonoBehaviour
     {
         Rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
         float timer = 0f;
-        rb.useGravity = false;
+        //rb.useGravity = false;
         while (timer < jumpTime)
         {
             timer += Time.deltaTime;
             //rb.velocity += new Vector3(0f, jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier * Time.deltaTime,0f);
-            rb.AddForce(jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier* Vector2.up);
+            //rb.AddForce(jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier* Vector2.up);
             yield return null;
         }
-        rb.useGravity = true;
+        //rb.useGravity = true;
+        fallFaster = true;
     }
     private void Jump()
     {
@@ -220,6 +224,7 @@ public class PlayerController : MonoBehaviour
         canJump = true;
         currentNumberOfJumps = maxNumberOfJumps;
         col.material = null;
+        fallFaster = false;
     }
 
     public void LeftGround()
