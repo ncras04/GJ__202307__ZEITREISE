@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
 
     private void OnPlayerJoined(int playerAmount)
     {
+        foreach (var player in FindObjectsOfType<PlayerController>())
+        {
+            player.GetComponent<PlayerInput>().DeactivateInput();
+        }
+        
         if (playerAmount < 2)
         {
             return;
@@ -60,9 +65,10 @@ public class GameManager : MonoBehaviour
     private void TimeManagerOnOnTimerEnds()
     {
         if(TimeHighscore != null) TimeHighscore.StartTimer();
+        Debug.Log("Test");
 
-        PlayerManager.GetTopPlayer(true).GetComponent<PlayerInput>().enabled = true;
-        PlayerManager.GetTopPlayer(false).GetComponent<PlayerInput>().enabled = true;
+        PlayerManager.GetTopPlayer(true).GetComponent<PlayerInput>().ActivateInput();
+        PlayerManager.GetTopPlayer(false).GetComponent<PlayerInput>().ActivateInput();
 
         GameState = GameState.Playing;
         
