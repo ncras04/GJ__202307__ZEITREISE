@@ -50,12 +50,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9601fddd169fb904fa732934512d5050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 60
+  movementSpeed: 20
+  maxVelocity: 10
   movement: {x: 0, y: 0}
-  jumpForce: 10
+  jumpForce: 20
   maxNumberOfJumps: 1
-  fallSpeedMultiplier: 5
-  dashDuration: 1
+  fallSpeedMultiplier: 55
+  dashDuration: 0
   dashForce: 0
   dashCurve:
     serializedVersion: 2
