@@ -2,6 +2,7 @@ using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private CinemachineTargetGroup targetGroup;
 
-
+    public event Action<int> OnNextPlayerJoined;
+         
     private void Awake()
     {
         inputManager = GetComponent<PlayerInputManager>();
@@ -54,6 +56,7 @@ public class PlayerManager : MonoBehaviour
         {
             inputManager.playerPrefab = playerPrefab;
             //targetGroup.m_Targets[0].target = playerPrefab.transform;
+            OnNextPlayerJoined?.Invoke(1);
         }
         else if (inputManager.playerCount == 2)
         {
@@ -62,6 +65,7 @@ public class PlayerManager : MonoBehaviour
             players = FindObjectsOfType<PlayerController>();
             if (players.Length == 2)
             {
+                OnNextPlayerJoined?.Invoke(2);
                 targetGroup.m_Targets[0].target = players[0].transform;
                 targetGroup.m_Targets[1].target = players[1].transform;
                 players[0].OnSwappingCall += (swappingDesire) =>
