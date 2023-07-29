@@ -20,10 +20,10 @@ public class ButtonController : MonoBehaviour
         {
             if(Vector2.Dot(player.Rb.velocity * -1, Vector2.up) > triggerRange)
             {
-                Debug.Log("playervelo: " + player.Rb.velocity.magnitude);
+                //Debug.Log("playervelo: " + player.Rb.velocity.magnitude);
                 onButtontTriggerEvent?.Invoke();
             }
-            Debug.Log(Vector2.Dot((player.transform.position - transform.position).normalized, transform.up));
+            //Debug.Log(Vector2.Dot((player.transform.position - transform.position).normalized, transform.up));
         }
     }
 }
