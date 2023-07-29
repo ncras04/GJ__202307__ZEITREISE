@@ -44,6 +44,11 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        playerManager = GameManager.Instance.PlayerManager;
+    }
+
     void FixedUpdate()
     {
         if (GameManager.Instance.GameState != GameState.Playing)

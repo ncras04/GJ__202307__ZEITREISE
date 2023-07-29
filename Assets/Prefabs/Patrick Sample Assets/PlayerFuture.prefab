@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4533134081148976093}
   - component: {fileID: 4562792893964466445}
   - component: {fileID: 2648876257126744969}
-  - component: {fileID: 6065464047100376870}
+  - component: {fileID: 1473827324192174548}
   m_Layer: 0
   m_Name: PlayerFuture
   m_TagString: Player
@@ -145,7 +145,6 @@ Transform:
   - {fileID: 5915261108905182054}
   - {fileID: 3419884643087286805}
   - {fileID: 7606146303096824646}
-  - {fileID: 7652220649586658582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &8895157130399239183
@@ -400,7 +399,7 @@ CapsuleCollider:
   m_Height: 1.1261292
   m_Direction: 1
   m_Center: {x: 0, y: 0.5630646, z: 0}
---- !u!114 &6065464047100376870
+--- !u!114 &1473827324192174548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -824,13 +823,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943738642661369405}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.79, z: 0.56}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.863, y: 0.216, z: -0.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2993138821704432265}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2454180184653962351}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &2703363318460414852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -896,7 +895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cce26f1722e5e5441b0ab7d02a45ee89,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7652220649586658582}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce26f1722e5e5441b0ab7d02a45ee89, type: 3}
 --- !u!4 &2454180184653962351 stripped
