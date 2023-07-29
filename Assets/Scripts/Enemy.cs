@@ -46,6 +46,11 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameManager.Instance.GameState != GameState.Playing)
+        {
+            return;
+        }
+        
         CheckStatus();
         ExecuteStates();
     }
