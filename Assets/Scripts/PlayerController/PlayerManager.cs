@@ -42,6 +42,12 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    //public PlayerInput JoinPlayer(int playerIndex = -1, int splitScreenIndex = -1, string controlScheme = null, InputDevice pairWithDevice = null)
+    //{
+    //    var tmp = Instantiate(inputManager.playerPrefab);
+    //    return tmp;
+    //}
+
     private void OnPlayerJoined(PlayerInput playerInput)
     {
         if (inputManager.playerCount == 1)
@@ -83,15 +89,23 @@ public class PlayerManager : MonoBehaviour
     /// <returns>The top or bottom player.</returns>
     public PlayerController GetTopPlayer(bool isTop = true)
     {
-        if (isTop)
+        if (players.Length == 2)
         {
-            if (!isSwapped) return players[0];
-            else return players[1];
+            if (isTop)
+            {
+                if (!isSwapped) return players[0];
+                else return players[1];
+            }
+            else
+            {
+                if (!isSwapped) return players[1];
+                else return players[0];
+            }
         }
         else
         {
-            if (!isSwapped) return players[1];
-            else return players[0];
+            Debug.Log("Two players needs to be joined");
+            return null;
         }
     }
         
