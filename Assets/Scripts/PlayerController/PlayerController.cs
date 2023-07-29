@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement related:")]
     [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float maxVelocity = 8f;
     public Vector2 movement = Vector2.zero;
     [Header("Jump related:")]
     [SerializeField] float jumpForce = 10f;
@@ -109,6 +110,13 @@ public class PlayerController : MonoBehaviour
         {
             Rb.AddForce(Vector2.down * fallSpeedMultiplier);
         }
+        if(rb.velocity.magnitude > maxVelocity) 
+        { 
+            rb.velocity = rb.velocity.normalized * maxVelocity;
+        }
+        //var tmp = rb.velocity.normalized;
+        // rb.velocity = Vector3.Min(rb.velocity, tmp * maxVelocity);
+
     }
 
     #region Interaction
