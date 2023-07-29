@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +7,7 @@ public class Weapon : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Bullet _bulletPrefab;
+    [SerializeField] private ParticleSystem _particleSystem;
     private InputActionAsset _inputActionAsset;
 
     [SerializeField] private Transform muzzleSpawn;
@@ -43,7 +41,24 @@ public class Weapon : MonoBehaviour
         }
         
         _shotTimer = 0;
-        var bullet = Instantiate<Bullet>(_bulletPrefab, muzzleSpawn.position, muzzleSpawn.rotation);
+
+        if (_bulletPrefab)
+        {
+            var bullet = Instantiate<Bullet>(_bulletPrefab, muzzleSpawn.position, muzzleSpawn.rotation);
+        }
+        else
+        {
+            Debug.LogError("No Buller Prefab was set, you idiot");
+        }
+        
+        if (_bulletPrefab)
+        {
+            var particle = Instantiate<ParticleSystem>(_particleSystem, muzzleSpawn.position, muzzleSpawn.rotation);
+        }
+        else
+        {
+            Debug.LogError("No Particle Prefab was set, you idiot");
+        }
     }
 
     private void Setup()
@@ -61,6 +76,7 @@ public class Weapon : MonoBehaviour
             return;
         }
         //Check if player Future!
+        
         
         //if true -> Subscribe
         _inputActionAsset.FindAction("Interact").started += context => Shoot();
