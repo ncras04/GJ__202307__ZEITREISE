@@ -1565,6 +1565,7 @@ GameObject:
   - component: {fileID: 3277134886993005847}
   - component: {fileID: 2517502744799188928}
   - component: {fileID: 3835736031755162818}
+  - component: {fileID: 8071791398208619910}
   m_Layer: 0
   m_Name: PlayerPast
   m_TagString: Player
@@ -1915,6 +1916,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 787396958975270074}
   _controller: {fileID: 1494488478319013302}
+--- !u!114 &8071791398208619910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401132226597433522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1505c65dd358ad04cb834d5be7a151c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantPrefab: {fileID: 201964491356536084, guid: a3aeda01840fbc845b166be2d5f4de51,
+    type: 3}
+  plantEffect: {fileID: 6493376004167813616, guid: 828353f7bf941434abdf421f637ffb45,
+    type: 3}
+  yPlantPositionTop: 0.3
+  yPlantPositionBottom: -4.1
+  _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
+  plantCooldown: 1.2
 --- !u!1 &2404513756254532343
 GameObject:
   m_ObjectHideFlags: 0
@@ -7393,6 +7414,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SwapDesire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390513952809129632, guid: c765245e49c5ed84eb8758be6cfef5d3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390513952809129632, guid: c765245e49c5ed84eb8758be6cfef5d3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390513952809129632, guid: c765245e49c5ed84eb8758be6cfef5d3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7390513952809129632, guid: c765245e49c5ed84eb8758be6cfef5d3,
         type: 3}

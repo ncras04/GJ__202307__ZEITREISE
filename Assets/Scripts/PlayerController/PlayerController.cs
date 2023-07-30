@@ -231,6 +231,7 @@ public class PlayerController : MonoBehaviour
             //canJump = currentNumberOfJumps <= 0 ? false : true;
 
             IsJumping = true;
+
         }
     }
 

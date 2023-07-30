@@ -1,6 +1,5 @@
-using System;
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -13,6 +12,8 @@ public class PlantSystem : MonoBehaviour
     [SerializeField] float yPlantPositionTop;
     [SerializeField] float yPlantPositionBottom;
     [SerializeField] private GlobalInventory _globalInventory;
+    [SerializeField] float plantCooldown = 1.2f;
+    bool canPlant = true;
 
     PlayerController playerController;
     PlayerManager playerManager;
@@ -35,13 +36,30 @@ public class PlantSystem : MonoBehaviour
         {
             float yOffset = !playerManager.IsSwapped ? yPlantPositionTop : yPlantPositionBottom;
 
-            // Eventually a boxcast, but dunno what to check for, so just plant it.
-            Instantiate(plantPrefab, new Vector3(transform.position.x,yOffset,transform.position.z), Quaternion.identity);
+            if (canPlant && !playerController.IsJumping)
+            {
+                // Eventually a boxcast, but dunno what to check for, so just plant it.
+                Instantiate(plantPrefab, new Vector3(transform.position.x, yOffset, transform.position.z), Quaternion.Euler(0f, Random.Range(0f, 360f), 0f));
 
-            // Instantiate the particle effect.
-            Instantiate(plantEffect, transform.position, Quaternion.identity);
+                // Instantiate the particle effect.
+                Instantiate(plantEffect, transform.position, Quaternion.identity); 
+
+                canPlant = false;
+                StartCoroutine(StartCooldown(plantCooldown));
+            }
 
         }
+    }
+
+    IEnumerator StartCooldown(float cooldown)
+    {
+      
+        while(cooldown > 0f)
+        {
+            cooldown -= Time.deltaTime;
+            yield return null;
+        }
+        canPlant = true;
     }
 
 }

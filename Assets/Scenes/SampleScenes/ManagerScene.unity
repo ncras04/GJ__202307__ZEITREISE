@@ -873,7 +873,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayerPrefab
       value: 
-      objectReference: {fileID: 4773014479071116609, guid: a9557c3e3fd8a7942a1ff4ec9c84df86,
+      objectReference: {fileID: 7169811591422102826, guid: 68fa0f40a6c1ded4cabafd9a560cb1b4,
         type: 3}
     - target: {fileID: 2320094634061596327, guid: f065d55dd22bb774d9bc2e6c44bd473a,
         type: 3}
@@ -884,7 +884,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerPrefab
       value: 
-      objectReference: {fileID: 2401132226597433522, guid: 58266e8ab763f3143bb6acb39c5311f3,
+      objectReference: {fileID: 3418965140559999531, guid: c928b629b2b8be94089422a79ddc3fef,
         type: 3}
     - target: {fileID: 2320094634061596327, guid: f065d55dd22bb774d9bc2e6c44bd473a,
         type: 3}
