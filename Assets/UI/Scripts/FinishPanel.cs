@@ -30,5 +30,6 @@ public class FinishPanel : MonoBehaviour
 
     public void FinishedGame()
     {
+        m_time.text = GameManager.Instance.TimeHighscore.GetDisplayTime();
     }
 }

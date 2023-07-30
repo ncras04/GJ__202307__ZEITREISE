@@ -34,7 +34,7 @@ public class UI_Highscore : MonoBehaviour
         GetHighscoreValues();
         DisplayHighscore();
 
-        GameManager.Instance.TimeHighscore.OnAddNewHighscore += AddNewHighscore;
+        //GameManager.Instance.TimeHighscore.OnAddNewHighscore += AddNewHighscore;
     }
 
     private void AddNewHighscore()
@@ -67,7 +67,8 @@ public class UI_Highscore : MonoBehaviour
         m_highScores.Clear();
         m_dicValues.Clear();
 
-        m_highScores = GameManager.Instance.TimeHighscore.HighScores;
+        LoadPlayerPrefs();
+        //m_highScores = GameManager.Instance.TimeHighscore.HighScores;
         m_dicValues = m_highScores.Keys.ToList() ;
 
         m_dicValues.Sort();
@@ -91,6 +92,25 @@ public class UI_Highscore : MonoBehaviour
             { 
                 m_places[j].ChangePlace("---", 0);
             }
+        }
+    }
+
+    private void LoadPlayerPrefs()
+    {
+        if (!PlayerPrefs.HasKey("amount"))
+        {
+            Debug.LogWarning("No Highscores found!");
+            return;
+        }
+
+        m_highScores = new Dictionary<float, string>();
+        int amount = PlayerPrefs.GetInt("amounts");
+
+        for (int index = 0; index < amount; index++)
+        {
+            var title = PlayerPrefs.GetString("highScore" + index + "title");
+            var value = PlayerPrefs.GetFloat("highScore" + index + "time");
+            m_highScores.Add(value, title);
         }
     }
 }
