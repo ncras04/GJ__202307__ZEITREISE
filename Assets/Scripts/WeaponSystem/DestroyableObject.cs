@@ -9,7 +9,7 @@ namespace WeaponSystem
         
         [Header("Optional")]
         [SerializeField] private GameObject destroyedVersion;
-        [SerializeField] private ParticleSystem _deathParticle;
+        [SerializeField] private GameObject _deathParticle;
 
         private float _currentHealth;
 

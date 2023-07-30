@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abab1818-7c8d-4a7c-9ab4-665786e769d3" name="Changes" comment="" />
+    <list default="true" id="abab1818-7c8d-4a7c-9ab4-665786e769d3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/FinalScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/FinalScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/DestroyableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/DestroyableObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VFX/GunHit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VFX/GunHit.prefab" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1690693830278</updated>
       <workItem from="1690693832188" duration="10206000" />
-      <workItem from="1690720311133" duration="1163000" />
+      <workItem from="1690720311133" duration="1486000" />
     </task>
     <servers />
   </component>
