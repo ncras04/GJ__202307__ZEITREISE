@@ -34,13 +34,14 @@ public class PlayerController : MonoBehaviour
     // Make it an event.
     public event Action InteractionHandler;
 
-    InputActionAsset inputAsset;
+
+    private InputActionAsset inputAsset;
     InputActionMap actionMap;
-    InputAction moveAction;
-    InputAction jumpAction;
-    InputAction swapAction;
-    InputAction interactAction;
-    InputAction dashAction;
+    public InputAction moveAction;
+    public InputAction jumpAction;
+    public InputAction swapAction;
+    public InputAction interactAction;
+    public InputAction dashAction;
 
     public event Action<bool> OnSwappingCall;
     public bool CanSwap { get; set; } = true;
@@ -51,6 +52,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PhysicMaterial physicMaterial;
     Rigidbody rb;
     Collider col;
+
+    public float CurrentMovementSpeed => Rb.velocity.sqrMagnitude;
+    public bool IsJumping;
+    public bool IsDashing;
     
     private void Awake()
     {
@@ -169,6 +174,8 @@ public class PlayerController : MonoBehaviour
             //velo.y = 0f;
             //rb.velocity = velo;
             StartCoroutine(StartDashTimer(dashDuration, storeJump));
+            IsDashing = true;
+            IsJumping = false;
         }
     }
 
@@ -190,6 +197,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator StartDashCooldown(float dashCooldown)
     {
+        IsDashing = false;
+        
         while (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
@@ -210,6 +219,8 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(StartJumpSpeedUp(jumpTime));
             currentNumberOfJumps--;
             //canJump = currentNumberOfJumps <= 0 ? false : true;
+
+            IsJumping = true;
         }
     }
 
@@ -233,6 +244,9 @@ public class PlayerController : MonoBehaviour
         col.material = null;
         fallFaster = false;
         Instantiate(dustLandPrefab, transform.position, Quaternion.identity);
+        
+        
+        IsJumping = false;
     }
 
     public void LeftGround()

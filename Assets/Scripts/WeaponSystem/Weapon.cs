@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,8 @@ public class Weapon : MonoBehaviour
     private float _shotTimer;
 
     private bool CanFire => _shotTimer > 1 / fireRate;
+
+    public event Action OnShot;
 
     private void Awake()
     {
@@ -62,6 +65,7 @@ public class Weapon : MonoBehaviour
         }
 
         _globalInventory.Ammonition--;
+        OnShot?.Invoke();
     }
 
     private void Setup()
