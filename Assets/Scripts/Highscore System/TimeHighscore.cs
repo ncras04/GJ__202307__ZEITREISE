@@ -9,11 +9,13 @@ public class TimeHighscore : MonoBehaviour
     [SerializeField] private float animationTime;
     [SerializeField] AnimationCurve lerpingCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
-    private float _highscoreTime;
+    public static float _highscoreTime;
 
     private float _animatedTime;
 
     private Coroutine _lerpingTime;
+
+    private bool isStopped;
 
 
     private Dictionary<float, string> _highScores = new Dictionary<float, string>();
@@ -36,9 +38,14 @@ public class TimeHighscore : MonoBehaviour
 
     public event Action OnAddNewHighscore;
 
+    public void Stop()
+    {
+        isStopped = true;
+    }
+    
     private void Update()
     {
-        if (!hasStarted)
+        if (!hasStarted || isStopped)
         {
             return;
         }
@@ -54,6 +61,8 @@ public class TimeHighscore : MonoBehaviour
     public void StartTimer()
     {
         hasStarted = true;
+        _highscoreTime = 0;
+        _animatedTime = 0;
     }
 
     public void AddCustomTime(float amount)
@@ -106,11 +115,11 @@ public class TimeHighscore : MonoBehaviour
             index++;
         }
 
-        PlayerPrefs.SetInt("amount", index);
+        PlayerPrefs.SetInt("amounts", index);
         PlayerPrefs.Save();
 
         highScoreHasAlreadyBeenLoaded = false;
-
+        
         OnAddNewHighscore?.Invoke();
     }
 
@@ -123,7 +132,7 @@ public class TimeHighscore : MonoBehaviour
         }
 
         _highScores = new Dictionary<float, string>();
-        int amount = PlayerPrefs.GetInt("amount");
+        int amount = PlayerPrefs.GetInt("amounts");
 
         for (int index = 0; index < amount; index++)
         {

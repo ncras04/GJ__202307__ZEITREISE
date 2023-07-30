@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        Destroy(gameObject, 2.0f);
     }
 
     private void Start()
