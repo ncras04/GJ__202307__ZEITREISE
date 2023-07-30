@@ -62,17 +62,18 @@ public class CameraShaker : MonoBehaviour
     {
         shakeTimer = duration;
         timer = 0f;
-        //noiseProfile.m_AmplitudeGain = intensity;
         this.intensity = intensity;
-        noiseProfile.m_FrequencyGain = 2f;
         noiseProfile.m_NoiseProfile = shakeNoiseSettings;
+        noiseProfile.m_AmplitudeGain = intensity;
+        noiseProfile.m_FrequencyGain = 2f;
     }
     public void ShakeCameraAdditive(float intensity, float duration)
     {
         shakeTimer += duration;
-        //noiseProfile.m_AmplitudeGain += intensity;
         this.intensity += intensity;
-        noiseProfile.m_FrequencyGain = 2f;
         noiseProfile.m_NoiseProfile = shakeNoiseSettings;
+        noiseProfile.m_AmplitudeGain += intensity;
+        noiseProfile.m_FrequencyGain = 2f;
+        Debug.Log(noiseProfile.m_AmplitudeGain);
     }
 }
