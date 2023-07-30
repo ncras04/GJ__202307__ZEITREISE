@@ -12260,7 +12260,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  targetScene: penis
+  targetScene: WinnerScene
 --- !u!1001 &1503180727
 PrefabInstance:
   m_ObjectHideFlags: 0
