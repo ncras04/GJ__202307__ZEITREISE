@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 4562792893964466445}
   - component: {fileID: 2648876257126744969}
   - component: {fileID: 1473827324192174548}
+  - component: {fileID: 7141963563949712335}
   m_Layer: 0
   m_Name: PlayerFuture
   m_TagString: Player
@@ -418,6 +419,19 @@ MonoBehaviour:
   _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
   muzzleSpawn: {fileID: 7652220649586658582}
   fireRate: 100
+--- !u!114 &7141963563949712335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7169811591422102826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3634ccb981715f240bed08e8901f51b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
 --- !u!1 &7458760475331081783
 GameObject:
   m_ObjectHideFlags: 0

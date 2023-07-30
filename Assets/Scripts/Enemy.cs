@@ -31,18 +31,12 @@ public class Enemy : MonoBehaviour
     public GameObject[] Waypoints;
     int waypointIndex;
 
-    Animator animator;
-
     // The Bullt to Spawn
     public GameObject bullet;
 
     private GameObject victim; // Could be a Waypoint to move to or the Player
-    public PlayerManager playerManager;
+    private PlayerManager playerManager;
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     private void Start()
     {
@@ -62,17 +56,12 @@ public class Enemy : MonoBehaviour
 
     private void CheckStatus()
     {
-        if (EnemyOnTop)
+        if (!EnemyOnTop)
         {
             if (ReturnDistance(playerManager.GetTopPlayer(true).gameObject, gameObject) < ViewRange)
             {
                 currentState = States.Attack;
             }
-            //else
-            //{
-            //    if (currentState == States.Idle) return;
-            //    currentState = States.Idle;
-            //}
         }
         else
         {
@@ -80,11 +69,6 @@ public class Enemy : MonoBehaviour
             {
                 currentState = States.Attack;
             }
-            //else
-            //{
-            //    if (currentState == States.Idle) return;
-            //    currentState = States.Idle;
-            //}
         }
     }
 
@@ -93,15 +77,12 @@ public class Enemy : MonoBehaviour
         switch (currentState)
         {
             case States.Idle:
-                animator.SetBool("isAttacking", false);
                 Idle();
                 break;
             case States.Attack:
                 UseAttack();
-                animator.SetBool("isAttacking", true);
                 break;
             case States.Move:
-                animator.SetBool("isAttacking", false);
                 Move();
                 break;
             default:
@@ -111,8 +92,6 @@ public class Enemy : MonoBehaviour
 
     private void Idle()
     {
-        animator.SetFloat("mSpeed", 0);
-
         if (!isTurning)
         {
             StartCoroutine(Wait(1.5f));
@@ -121,8 +100,6 @@ public class Enemy : MonoBehaviour
 
     private void Move()
     {
-        animator.SetFloat("mSpeed", 1);
-
         RotateToVictim(Waypoints[waypointIndex]);
 
         var step = MovementSpeed * Time.deltaTime;
@@ -141,7 +118,7 @@ public class Enemy : MonoBehaviour
 
     private void UseAttack()
     {
-        victim = EnemyOnTop ? playerManager.GetTopPlayer(true).gameObject : playerManager.GetTopPlayer(false).gameObject;
+        victim = !EnemyOnTop ? playerManager.GetTopPlayer(true).gameObject : playerManager.GetTopPlayer(false).gameObject;
 
         RotateToVictim(victim);
 
@@ -180,7 +157,6 @@ public class Enemy : MonoBehaviour
     private IEnumerator Wait(float time)
     {
         isTurning = true;
-        Debug.Log("Turn");
         yield return new WaitForSeconds(time);
 
         currentState = States.Move;
@@ -195,23 +171,4 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, ViewRange);
     }
-
-    #region Obsolte
-
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.tag == "Player1" || other.tag == "Player2")
-    //    {
-    //        currentState = States.Attack;
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.tag == "Player1" || other.tag == "Player2")
-    //    {
-    //        currentState = States.Idle;
-    //    }
-    //}
-    #endregion 
 }

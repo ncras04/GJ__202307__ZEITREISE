@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public TimeHighscore TimeHighscore { set; get; }
     [field: SerializeField] public TimeManager TimeManager { set; get; }
 
+    [SerializeField] private GlobalInventory _globalInventory;
+
     [Header("Settings"), SerializeField] private float countDownTime = 3;
 
 
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        _globalInventory.ResetData();
 
         PlayerManager.OnNextPlayerJoined += OnPlayerJoined;
     }
@@ -75,7 +79,6 @@ public class GameManager : MonoBehaviour
     private void TimeManagerOnOnTimerEnds()
     {
         if(TimeHighscore != null) TimeHighscore.StartTimer();
-        Debug.Log("Test");
 
         PlayerManager.GetTopPlayer(true).GetComponent<PlayerInput>().ActivateInput();
         PlayerManager.GetTopPlayer(false).GetComponent<PlayerInput>().ActivateInput();

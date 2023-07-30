@@ -18,7 +18,7 @@ namespace WeaponSystem
         public bool IsDeath => _currentHealth <= 0;
 
         public event Action OnDeath; 
-        public event Action OnGettingHit;
+        public event Action<float> OnGettingHit;
         
         //needs expanded with sounds that will be fired
 
@@ -57,7 +57,7 @@ namespace WeaponSystem
             }
             else
             {
-                OnGettingHit?.Invoke();
+                OnGettingHit?.Invoke(damage);
             }
         }
     }

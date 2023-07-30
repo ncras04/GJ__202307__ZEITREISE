@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WeaponSystem;
 
 [SelectionBase, RequireComponent(typeof(PlayerInput), typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PhysicMaterial physicMaterial;
     Rigidbody rb;
     Collider col;
-
+    
     private void Awake()
     {
         Rb = GetComponent<Rigidbody>();

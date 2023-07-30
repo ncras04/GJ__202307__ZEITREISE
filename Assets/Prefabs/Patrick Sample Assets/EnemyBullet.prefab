@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4398fb333f60a3f44a6b11afac923ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 50
+  bulletSpeed: 400
   damage: 1
   interactionParticle: {fileID: 0}
+  ignoredTag: Enemy
