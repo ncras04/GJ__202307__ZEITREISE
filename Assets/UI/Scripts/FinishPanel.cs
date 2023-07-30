@@ -12,7 +12,7 @@ public class FinishPanel : MonoBehaviour
 
     private void Start()
     {
-
+        //m_time.text = TimeHighscore.
     }
 
     public void AddNewHighscore()
@@ -30,6 +30,5 @@ public class FinishPanel : MonoBehaviour
 
     public void FinishedGame()
     {
-        m_time.text = GameManager.Instance.TimeHighscore.GetDisplayTime();
     }
 }
