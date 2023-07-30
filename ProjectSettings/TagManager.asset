@@ -7,7 +7,7 @@ TagManager:
   - Player1
   - Player2
   - Enemy
-  - AudioSFXManager
+  - AudioManager
   layers:
   - Default
   - TransparentFX

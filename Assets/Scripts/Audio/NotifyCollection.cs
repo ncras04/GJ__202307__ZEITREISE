@@ -36,6 +36,10 @@ public class NotifyCollection<T> : ScriptableObject
     private event System.Action<T> m_onRemove;
     private event System.Action<T> m_onAdd;
 
+    /// <summary>
+    /// Adds a request to a list for the assigned manager
+    /// </summary>
+    /// <param name="_obj">Requested Event</param>
     public void Add(T _obj)
     {
         m_data.Add(_obj);

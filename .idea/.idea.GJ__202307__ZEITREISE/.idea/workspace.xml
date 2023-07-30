@@ -3,8 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="abab1818-7c8d-4a7c-9ab4-665786e769d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GJ__202307__ZEITREISE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GJ__202307__ZEITREISE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerFuture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerFuture.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerPast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerPast.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/FinalScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/FinalScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/ManagerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/ManagerScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXRequestCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXRequestCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXTester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSFXTester.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSourceSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioSourceSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/NotifyCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/NotifyCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/SoundCollection.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/SoundCollection.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/TestingUtilities/AudioTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/TestingUtilities/AudioTestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerHittable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerHittable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1690693830278</updated>
       <workItem from="1690693832188" duration="10206000" />
+      <workItem from="1690720311133" duration="831000" />
     </task>
     <servers />
   </component>

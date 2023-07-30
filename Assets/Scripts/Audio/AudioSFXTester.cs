@@ -1,10 +1,11 @@
 using UnityEngine;
 using Audio;
 
+
 public class AudioSFXTester : MonoBehaviour
 {
     [SerializeField]
-    private SoundFXRequestCollection m_soundRequests;
+    private SoundFXRequestCollection SFX;
 
     [SerializeField]
     private AudioEvent m_testSound;
@@ -12,10 +13,12 @@ public class AudioSFXTester : MonoBehaviour
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
-            m_soundRequests.Add(AudioSFXRequest.CreateRequest(m_testSound, transform));
+            SFX.Add
+                (AudioSFX.Request(m_testSound, transform));
 
         if (Input.GetKeyDown(KeyCode.D))
-            m_soundRequests.Add(AudioSFXRequest.CreateRequest(m_testSound));
+            SFX.Add
+                (AudioSFX.Request(m_testSound));
 
         if (Input.GetKeyDown(KeyCode.S))
             Destroy(gameObject);

@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform muzzleSpawn;
     
     [SerializeField] private float fireRate;
+    
+    
+    [SerializeField] private SoundFXRequestCollection sfx;
+    [SerializeField] private AudioEvent shootSound;
 
     private float _shotTimer;
 
@@ -64,6 +69,8 @@ public class Weapon : MonoBehaviour
             Debug.LogError("No Particle Prefab was set, you idiot");
         }
 
+        sfx.Add(AudioSFX.Request(shootSound));
+        
         _globalInventory.Ammonition--;
         OnShot?.Invoke();
     }

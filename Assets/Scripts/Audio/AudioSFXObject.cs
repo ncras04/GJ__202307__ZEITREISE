@@ -29,7 +29,6 @@ namespace Audio
                 if (!parent.GetComponent<AudioSourceSaver>())
                     parent.AddComponent<AudioSourceSaver>();
             }
-
         }
 
         private void Update()

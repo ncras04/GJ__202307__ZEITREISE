@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Audio;
 using Countdown;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -36,6 +37,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GlobalInventory _globalInventory;
     
     [SerializeField] private float restartSceneDelay;
+    
+    [SerializeField] private SoundFXRequestCollection sfx;
+    [SerializeField] private AudioEvent countDownSound;
 
     [Header("Settings"), SerializeField] private float countDownTime = 3;
     
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
         StartTimer.SetTimer(countDownTime);
         StartTimer.OnTimerEnds += TimeManagerOnOnTimerEnds;
         StartTimer.StartTimer();
+        sfx.Add(AudioSFX.Request(countDownSound));
         
         GameState = GameState.CountDown;
     }

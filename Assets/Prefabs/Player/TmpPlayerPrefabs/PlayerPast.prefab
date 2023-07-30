@@ -1733,6 +1733,11 @@ MonoBehaviour:
   swapDesireEffect: {fileID: 5869800070466118546}
   swapEffect: {fileID: 4625387784382329200, guid: c3895335f8a80464ca10a750cd5625d5,
     type: 3}
+  sfx: {fileID: 11400000, guid: db1a88ec9c99e9543b593e265d18ead9, type: 2}
+  landingSound: {fileID: 11400000, guid: 20003de6b4fcecb4c94ef15ca37e5eb1, type: 2}
+  walkingSound: {fileID: 11400000, guid: f63c71f8421bb0a418ee266b64d9e47c, type: 2}
+  jumpSound: {fileID: 11400000, guid: 412067a674236984e9ea9584bb8762d7, type: 2}
+  switchSound: {fileID: 11400000, guid: c59eb11d34d934949b71e87619b3e5a0, type: 2}
   physicMaterial: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49, type: 2}
   IsJumping: 0
   IsDashing: 0
@@ -1903,6 +1908,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
   replacedElement: {fileID: 0}
+  sfx: {fileID: 11400000, guid: db1a88ec9c99e9543b593e265d18ead9, type: 2}
+  damageSound: {fileID: 11400000, guid: d6447cfeb5855064791e2bbf011f74db, type: 2}
 --- !u!114 &3835736031755162818
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using WeaponSystem;
@@ -52,6 +53,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem dashEffect;
     [SerializeField] GameObject swapDesireEffect;
     [SerializeField] GameObject swapEffect;
+    
+    [SerializeField] SoundFXRequestCollection sfx;
+    [SerializeField] AudioEvent landingSound;
+    [SerializeField] AudioEvent walkingSound;
+    [SerializeField] AudioEvent jumpSound;
+    [SerializeField] AudioEvent switchSound;
     
 
     [SerializeField] PhysicMaterial physicMaterial;
@@ -230,8 +237,9 @@ public class PlayerController : MonoBehaviour
             currentNumberOfJumps--;
             //canJump = currentNumberOfJumps <= 0 ? false : true;
 
+            sfx.Add(AudioSFX.Request(jumpSound));
+            
             IsJumping = true;
-
         }
     }
 
@@ -256,7 +264,7 @@ public class PlayerController : MonoBehaviour
         fallFaster = false;
         Instantiate(dustLandPrefab, transform.position, Quaternion.identity);
         
-        
+        sfx.Add(AudioSFX.Request(landingSound));
         IsJumping = false;
     }
 
@@ -283,5 +291,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(swapEffect, transform.position + new Vector3(0f,.5f,-.2f), Quaternion.identity);
         }
+        
+        sfx.Add(AudioSFX.Request(switchSound));
     }
 }

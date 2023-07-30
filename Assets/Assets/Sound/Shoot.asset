@@ -9,6 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9919f94f285d9f043abf8d8573df0e59, type: 3}
-  m_Name: SoundCollection
+  m_Script: {fileID: 11500000, guid: 344a5665812f48b4ab47014b2ef25be9, type: 3}
+  m_Name: Shoot
   m_EditorClassIdentifier: 
+  m_volume: 1
+  m_clips:
+  - {fileID: 8300000, guid: 23d71c3726ccbe04ba0a05801cf1df9a, type: 3}
+  - {fileID: 8300000, guid: 77374e19820570640877f037622fc3c9, type: 3}
+  m_isPitchAffected: 1
