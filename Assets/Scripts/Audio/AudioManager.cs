@@ -147,7 +147,13 @@ public class AudioManager : MonoBehaviour
         isWaiting.volume = 0;
         isWaiting.Play();
 
-        QueueSong(isWaiting, _request.Music.Volume * _request.VolumeOverride, isPlaying, m_fadeDuration * _request.FadeOverride);
+        float fadeDur = m_fadeDuration * _request.FadeOverride;
+        float isWaitingVol = _request.Music.Volume * _request.VolumeOverride;
+
+        if (fadeDur < 0.01f)
+            fadeDur = 0.01f;
+
+        QueueSong(isWaiting, isWaitingVol, isPlaying, fadeDur);
 
         m_BGMRequests.Remove(_request);
     }
