@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     Collider col;
 
+    float moveCheckTimer = 4f;
+
     public float CurrentMovementSpeed => Rb.velocity.sqrMagnitude;
 
     public bool WantsToSwap { get => wantsToSwap; set => wantsToSwap = value; }
@@ -148,6 +150,26 @@ public class PlayerController : MonoBehaviour
             dustRunningEffect.Play();
         else
             dustRunningEffect.Stop();
+
+        // Delete later:
+        CheckPlayerMovement();
+    }
+
+    void CheckPlayerMovement()
+    {
+        if(rb.velocity.magnitude == 0)
+        {
+            moveCheckTimer -= Time.deltaTime;
+            if(moveCheckTimer < 0)
+            {
+                rb.AddForce(Vector2.up * 15f,ForceMode.Impulse);
+                moveCheckTimer = 4f;
+            }
+        }
+        else
+        {
+            moveCheckTimer = 4f;
+        }
     }
 
     private void FixedUpdate()
