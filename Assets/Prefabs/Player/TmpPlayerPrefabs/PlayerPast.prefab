@@ -1607,8 +1607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  maxXVelocity: 12
-  jumpForceUpMultiplier: 80
+  maxXVelocity: 9
+  jumpForceUpMultiplier: 70
   jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -1635,9 +1635,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxNumberOfJumps: 1
   fallSpeedMultiplier: 20
-  jumpTime: 0.5
+  jumpTime: 0.4
   dashDuration: 0.2
-  dashForce: 250
+  dashForce: 120
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -1902,6 +1902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
+  replacedElement: {fileID: 0}
 --- !u!114 &3835736031755162818
 MonoBehaviour:
   m_ObjectHideFlags: 0

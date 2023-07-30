@@ -7,14 +7,15 @@ TagManager:
   - Player1
   - Player2
   - Enemy
+  - AudioSFXManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NotCollidable
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     bool isSwapped = false;
     bool justSwapped = false;
 
-    PlayerInputManager inputManager;
+    public PlayerInputManager inputManager;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private CinemachineTargetGroup targetGroup;
     [SerializeField] private Transform targetGroupHelper;
@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if (players != null && players.Length == 2)
+        if (players != null && players.Length == 2 && players[0] != null && players[1] != null)
         {
             targetGroupHelper.position = 
                 new Vector2((players[0].transform.position.x + players[1].transform.position.x) * 0.5f,targetGroupHelper.position.y);

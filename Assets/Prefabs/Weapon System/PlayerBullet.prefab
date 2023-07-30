@@ -148,5 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 1000
   damage: 1
-  interactionParticle: {fileID: 0}
+  interactionParticle: {fileID: 2674407530420922230, guid: 12e57599b592fd043bd5027beb81c128,
+    type: 3}
   ignoredTag: Player
