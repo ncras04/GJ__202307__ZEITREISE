@@ -29,7 +29,7 @@ public class FinishPanel : MonoBehaviour
 
     public void RandomName()
     {
-        string name = "Player" + Random.Range(1, 100);
+        string name = "PatrickFunnyName" + Random.Range(1, 100);
 
          m_name.text = name;
     }
