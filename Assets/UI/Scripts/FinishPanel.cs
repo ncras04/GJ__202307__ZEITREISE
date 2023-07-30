@@ -20,6 +20,9 @@ public class FinishPanel : MonoBehaviour
 
     public void AddNewHighscore()
     {
+        if(m_name.text == "")
+            RandomName();
+
         //GameManager.Instance.TimeHighscore.SaveHighscore(m_name.text);
         m_highscorePanel.transform.parent.gameObject.SetActive(true);
         m_highscorePanel.AddNewHighscore(m_name.text, TimeHighscore._highscoreTime);
