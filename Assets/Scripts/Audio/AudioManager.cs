@@ -41,6 +41,8 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        gameObject.tag = m_tag;
+
         GameObject[] objs = GameObject.FindGameObjectsWithTag(m_tag);
 
         if (objs.Length > 1)
