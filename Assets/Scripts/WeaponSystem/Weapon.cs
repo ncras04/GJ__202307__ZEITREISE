@@ -57,7 +57,7 @@ public class Weapon : MonoBehaviour
         
         if (_particleSystem)
         {
-            var particle = Instantiate<GameObject>(_particleSystem, muzzleSpawn.position, muzzleSpawn.rotation);
+            var particle = Instantiate<GameObject>(_particleSystem, muzzleSpawn.position, muzzleSpawn.rotation, muzzleSpawn);
         }
         else
         {

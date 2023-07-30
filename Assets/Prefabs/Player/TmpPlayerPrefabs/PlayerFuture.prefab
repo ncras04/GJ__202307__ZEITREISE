@@ -3409,8 +3409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  maxXVelocity: 12
-  jumpForceUpMultiplier: 105
+  maxXVelocity: 7
+  jumpForceUpMultiplier: 40
   jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -3438,8 +3438,8 @@ MonoBehaviour:
   maxNumberOfJumps: 1
   fallSpeedMultiplier: 30
   jumpTime: 0.4
-  dashDuration: 0.4
-  dashForce: 15
+  dashDuration: 0.2
+  dashForce: 35
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -3495,44 +3495,44 @@ MonoBehaviour:
   moveAction:
     m_Name: Move
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 82bf1550-2aa8-4996-abce-0ea4548ab8b9
+    m_ExpectedControlType: Vector2
+    m_Id: b803e0ba-292c-4c4c-9469-331eecbe075b
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
-    m_Flags: 0
+    m_Flags: 1
   jumpAction:
     m_Name: Jump
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 55423225-ed7e-46fd-b1e3-2937f8e2c253
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 7e170a38-ab1b-4c08-8702-2ce0ca9ab166
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   swapAction:
     m_Name: Swap
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0c57d6b3-1630-4a4b-b4ac-d053c2ef7ffe
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 736b11c7-6b3b-45ed-adc2-a15cbfb514df
     m_Processors: 
-    m_Interactions: 
+    m_Interactions: Hold
     m_SingletonActionBindings: []
     m_Flags: 0
   interactAction:
     m_Name: Interact
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 26160d7b-aa36-4259-aac0-3ff2ee6a68db
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 3a5f02b8-db65-432c-9583-2ae30b7289a2
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   dashAction:
     m_Name: Dash
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 2253b29c-fbf7-4e95-a3ac-47e4fc7e8a55
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: fab60c00-7225-4881-a5c7-3de6b86e37c4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -3714,7 +3714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 6208378669232049230, guid: a9de9a7809e10684993a8fcbfe553e23,
     type: 3}
-  _particleSystem: {fileID: 8263742276764388904, guid: 6bfde29f8e0bf7148bc10728b7a3adc5,
+  _particleSystem: {fileID: 5027960092097356297, guid: 4486584cc9a61a842b81be8a1f38ae26,
     type: 3}
   _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
   muzzleSpawn: {fileID: 7484551120572892041}

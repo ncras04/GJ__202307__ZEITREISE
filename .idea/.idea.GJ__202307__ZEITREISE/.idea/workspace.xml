@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="abab1818-7c8d-4a7c-9ab4-665786e769d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GJ__202307__ZEITREISE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GJ__202307__ZEITREISE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/BaseColors/Glow White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/BaseColors/Glow White.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerFuture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerFuture.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerPast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/TmpPlayerPrefabs/PlayerPast.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapon System/PlayerBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapon System/PlayerBullet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/FinalScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/FinalScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/ManagerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalScenes/ManagerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScenes/PrototypePlaygroundWithoutAssets/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScenes/PrototypePlaygroundWithoutAssets/Global Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Spikes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Spikes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WinnerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WinnerScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VFX/GunMuzzle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VFX/GunMuzzle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1690693830278</updated>
-      <workItem from="1690693832188" duration="7999000" />
+      <workItem from="1690693832188" duration="9123000" />
     </task>
     <servers />
   </component>

@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float damage;
 
-    [SerializeField] private ParticleSystem interactionParticle;
+    [SerializeField] private GameObject interactionParticle;
 
     [SerializeField] private string ignoredTag;
 
