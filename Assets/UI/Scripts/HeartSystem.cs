@@ -50,8 +50,6 @@ public class HeartSystem : MonoBehaviour
 
     private void Damage(float _damageAmount)
     {
-        Debug.Log(_damageAmount.ToString());
-
         for (int i = m_lifehearts.Count - 1; i >= 0; i--)
         {
             if (m_lifehearts[i].gameObject != null)

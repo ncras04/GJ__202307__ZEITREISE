@@ -5,15 +5,17 @@ using WeaponSystem;
 
 public class Spikes : MonoBehaviour
 {
-    public float Damage = 1000;
+    [SerializeField] private Animator _animator;
+    private static readonly int Trap = Animator.StringToHash("Trap");
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             var component = other.gameObject.GetComponent<DestroyableObject>();
             component.OnHit(component.CurrentHealth);
-            //Debug.Log(component.CurrentHealth);
+            
+            _animator.SetTrigger(Trap);
         }
     }
 }
