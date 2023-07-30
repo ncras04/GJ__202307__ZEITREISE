@@ -57,6 +57,12 @@ public class GlobalInventory : ScriptableObject
             }
             
             OnHealthChanged?.Invoke(value);
+            
+            if (oldValue - value < 0)
+            {
+                return;
+            }
+            
             OnGetDamage?.Invoke(oldValue - value);
 
             if (value <= 0)
@@ -67,6 +73,8 @@ public class GlobalInventory : ScriptableObject
         }
     }
 
+    public bool IsDeath => Health <= 0;
+    
     public event Action<float> OnHealthChanged;
     public event Action<float> OnGetDamage;
     public event Action OnDeath;

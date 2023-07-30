@@ -15,6 +15,8 @@ public class TimeHighscore : MonoBehaviour
 
     private Coroutine _lerpingTime;
 
+    private bool isStopped;
+
 
     private Dictionary<float, string> _highScores = new Dictionary<float, string>();
 
@@ -34,9 +36,14 @@ public class TimeHighscore : MonoBehaviour
     private bool highScoreHasAlreadyBeenLoaded = false;
     private bool hasStarted;
 
+    public void Stop()
+    {
+        isStopped = true;
+    }
+    
     private void Update()
     {
-        if (!hasStarted)
+        if (!hasStarted || isStopped)
         {
             return;
         }

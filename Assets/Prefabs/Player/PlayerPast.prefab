@@ -343,6 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _globalInventory: {fileID: 11400000, guid: 641fdb30e0337bf4e9ce3f55a4dcdf16, type: 2}
+  replacedElement: {fileID: 2196599948075566988, guid: f68f85275f4b84c46abc8cced7592192,
+    type: 3}
 --- !u!114 &6384105128426415007
 MonoBehaviour:
   m_ObjectHideFlags: 0

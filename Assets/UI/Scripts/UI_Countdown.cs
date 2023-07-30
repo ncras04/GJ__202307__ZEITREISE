@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.WebSockets;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Countdown : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class UI_Countdown : MonoBehaviour
 
     [Header("Animation Curve")] [SerializeField]
     private AnimationCurve m_animationCurve;
+    
+    [Header("FadeOut")]
+    [SerializeField] private AnimationCurve m_fadeOutCurve;
+    [SerializeField] private float  fadeOutTime;
 
     [Header("Countdown")] [SerializeField] private float m_timeForCountdown = 3.0f;
 
@@ -29,8 +34,8 @@ public class UI_Countdown : MonoBehaviour
     {
         m_CountdownText.text = string.Format("{0:0}", m_timeForCountdown);
 
-        GameManager.Instance.TimeManager.OnTimerStarted += OnTimerStarted;
-        GameManager.Instance.TimeManager.OnTimerEnds += OnTimerEnds;
+        GameManager.Instance.StartTimer.OnTimerStarted += OnTimerStarted;
+        GameManager.Instance.StartTimer.OnTimerEnds += OnTimerEnds;
 
         GameManager.Instance.OnGameStateChanged += state =>
         {
@@ -59,13 +64,32 @@ public class UI_Countdown : MonoBehaviour
 
     private void OnTimerEnds()
     {
+        StartCoroutine(FadeOut());
+    }
+
+    IEnumerator FadeOut()
+    {
+        float timer = 0;
+        Image image = GetComponent<Image>();
+        float alpha = image.color.a;
+        
+        while (timer < fadeOutTime)
+        {
+            timer += Time.deltaTime;
+
+            var color = image.color;
+            color.a = Mathf.Lerp(alpha, 0, m_fadeOutCurve.Evaluate(timer / fadeOutTime));
+            image.color = color;
+            yield return null;
+        }
+        
         Destroy(this.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_timeForCountdown = (3 - GameManager.Instance.TimeManager.Timer);
+        m_timeForCountdown = (3 - GameManager.Instance.StartTimer.Timer);
         //m_CountdownText.text = string.Format("{0:0}", GameManager.Instance.TimeManager.Timer.ToString());
 
         //m_timeForCountdown -= Time.deltaTime;
