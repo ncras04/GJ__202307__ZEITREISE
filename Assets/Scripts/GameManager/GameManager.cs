@@ -15,7 +15,17 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameState GameState { set; get; } = GameState.WaitingForPlayers;
+    private GameState _gameState;
+
+    public GameState GameState
+    {
+        set
+        {
+            _gameState = value;
+            OnGameStateChanged?.Invoke(value);
+        }
+        get => _gameState;
+    }
 
     [field: SerializeField] public PlayerManager PlayerManager { set; get; }
 
@@ -23,9 +33,9 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public TimeManager TimeManager { set; get; }
 
     [Header("Settings"), SerializeField] private float countDownTime = 3;
-    
-    
 
+
+    public event Action<GameState> OnGameStateChanged;
     public event Action OnGameStarted;
 
     private void Awake()
