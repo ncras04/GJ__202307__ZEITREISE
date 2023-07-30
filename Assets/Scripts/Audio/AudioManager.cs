@@ -1,15 +1,27 @@
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.Audio;
+using System.Threading.Tasks;
 using Audio;
 
 
-public class AudioSFXManager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    private string m_tag = "AudioSFXManager";
-
+    private string m_tag = "AudioManager";
+    [Header("BGM")]
     [SerializeField]
-    [Range(0,0.5f)]
+    private BGMRequestCollection m_BGMRequests;
+    [SerializeField]
+    private AudioMixerGroup m_BGMOutput;
+    [SerializeField]
+    private float m_fadeDuration;
+
+    private AudioSource m_bgm1;
+    private AudioSource m_bgm2;
+
+    [Header("SFX")]
+    [SerializeField]
+    [Range(0, 0.5f)]
     [Tooltip("Randomized Pitch Range")]
     private float m_pitchEffect = 0.1f;
 
@@ -40,6 +52,19 @@ public class AudioSFXManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         m_pool = new ObjectPool<GameObject>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, true, m_maxPoolSize, m_maxPoolSize);
+
+        m_bgm1 = gameObject.AddComponent<AudioSource>();
+        m_bgm1.spatialBlend = 0.0f;
+        m_bgm1.playOnAwake = false;
+        m_bgm1.loop = true;
+        m_bgm1.outputAudioMixerGroup = m_BGMOutput;
+
+        m_bgm2 = gameObject.AddComponent<AudioSource>();
+        m_bgm2.spatialBlend = 0.0f;
+        m_bgm2.playOnAwake = false;
+        m_bgm2.loop = true;
+
+        m_bgm2.outputAudioMixerGroup = m_BGMOutput;
     }
 
     public GameObject CreatePooledItem()
@@ -72,8 +97,60 @@ public class AudioSFXManager : MonoBehaviour
     public void Start()
     {
         m_requests.OnAdd += OnSoundRequest;
+        m_BGMRequests.OnAdd += OnBGMRequest;
     }
 
+    async void QueueSong(AudioSource _isWaiting, float _isWaitingVolume, AudioSource _isPlaying, float _duration)
+    {
+        float volumeDuration = 0;
+        float volumeDiff = 0;
+
+        float isPlayingVolume = _isPlaying.volume;
+
+        while (volumeDuration < _duration)
+        {
+            volumeDuration += Time.deltaTime;
+
+            volumeDiff = volumeDuration / _duration;
+
+            _isPlaying.volume = Mathf.Lerp(isPlayingVolume, 0, volumeDiff);
+            _isWaiting.volume = Mathf.Lerp(0, _isWaitingVolume, volumeDiff);
+            await Task.Yield();
+        }
+
+        _isPlaying.Stop();
+    }
+
+    private void OnBGMRequest(AudioBGM _request)
+    {
+        AudioSource isPlaying;
+        AudioSource isWaiting;
+
+        if (m_bgm1.isPlaying)
+        {
+            isPlaying = m_bgm1;
+            isWaiting = m_bgm2;
+        }
+        else
+        {
+            isPlaying = m_bgm2;
+            isWaiting = m_bgm1;
+        }
+
+        if (isPlaying.clip == _request.Music.Song)
+        {
+            m_BGMRequests.Remove(_request);
+            return;
+        }
+
+        isWaiting.clip = _request.Music.Song;
+        isWaiting.volume = 0;
+        isWaiting.Play();
+
+        QueueSong(isWaiting, _request.Music.Volume * _request.VolumeOverride, isPlaying, m_fadeDuration * _request.FadeOverride);
+
+        m_BGMRequests.Remove(_request);
+    }
     private void OnSoundRequest(AudioSFX _request)
     {
         AudioSFXObject tmp = m_pool.Get().GetComponent<AudioSFXObject>();
