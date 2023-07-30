@@ -1373,6 +1373,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4617152083081313894, guid: 2082a8363af4d834fb552b467a3b8528,
         type: 3}
+      propertyPath: m_PositionMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617152083081313894, guid: 2082a8363af4d834fb552b467a3b8528,
+        type: 3}
       propertyPath: m_Targets.Array.data[0].target
       value: 
       objectReference: {fileID: 0}

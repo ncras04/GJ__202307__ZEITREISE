@@ -3,14 +3,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using System.Collections;
 
 public class PlayerManager : MonoBehaviour
 {
     private PlayerController[] players;
-    bool swappingDesirePlayerOne;
-    bool swappingDesirePlayerTwo;
 
     bool isSwapped = false;
+    bool justSwapped = false;
 
     public PlayerInputManager inputManager;
     [SerializeField] private GameObject playerPrefab;
@@ -36,60 +36,57 @@ public class PlayerManager : MonoBehaviour
             targetGroupHelper.position = 
                 new Vector2((players[0].transform.position.x + players[1].transform.position.x) * 0.5f,targetGroupHelper.position.y);
         }
-    }
+        if (players == null || players.Length != 2) return;
 
-    public void SwapPlayers()
-    {
-        if (swappingDesirePlayerOne && swappingDesirePlayerTwo && players[0].CanSwap && players[1].CanSwap)
+        // Check for players swapping:
+        if (justSwapped == false && 
+            players[0].WantsToSwap && players[1].WantsToSwap &&
+            players[0].CanSwap && players[1].CanSwap)
         {
+            // position change:
             Vector3 tmpPos = players[0].transform.position;
+            players[0].TeleportPlayer(players[1].transform.position);
+            players[0].Rb.position = players[1].transform.position;
+            players[1].TeleportPlayer(tmpPos);
+            players[1].Rb.position = tmpPos;
+
+            // velo change:
             Vector2 tmpVelocity = players[0].Rb.velocity;
-            players[0].transform.position = players[1].transform.position;
             players[0].Rb.velocity = players[1].Rb.velocity;
-            players[1].transform.position = tmpPos;
             players[1].Rb.velocity = tmpVelocity;
 
-            Debug.Log("Players swapped!");
             isSwapped = !isSwapped;
-            // Swap players in array directly.
-            // Handle velocity bla.
+            justSwapped = true;
+
+            StartCoroutine(StartSwapCooldown(3f));
         }
     }
 
-    //public PlayerInput JoinPlayer(int playerIndex = -1, int splitScreenIndex = -1, string controlScheme = null, InputDevice pairWithDevice = null)
-    //{
-    //    var tmp = Instantiate(inputManager.playerPrefab);
-    //    return tmp;
-    //}
+    IEnumerator StartSwapCooldown(float duration)
+    {
+        float timer = 0f;
+        while (timer <= duration) { 
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        justSwapped = false;
+    }
 
     private void OnPlayerJoined(PlayerInput playerInput)
     {
         if (inputManager.playerCount == 1)
         {
             inputManager.playerPrefab = playerPrefab;
-            //targetGroup.m_Targets[0].target = playerPrefab.transform;
             OnNextPlayerJoined?.Invoke(1);
         }
         else if (inputManager.playerCount == 2)
         {
-            //targetGroup.m_Targets[1].target = playerPrefab.transform;
-
             players = FindObjectsOfType<PlayerController>();
             if (players.Length == 2)
             {
                 OnNextPlayerJoined?.Invoke(2);
                 targetGroup.m_Targets[0].target = players[0].transform;
                 targetGroup.m_Targets[1].target = players[1].transform;
-                players[0].OnSwappingCall += (swappingDesire) =>
-                {
-                    swappingDesirePlayerOne = swappingDesire;
-                    SwapPlayers();
-                };
-                players[1].OnSwappingCall += (swappingDesire) =>
-                {
-                    swappingDesirePlayerTwo = swappingDesire;
-                    SwapPlayers();
-                };
             }
             else
             {
