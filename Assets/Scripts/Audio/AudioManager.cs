@@ -126,7 +126,7 @@ public class AudioManager : MonoBehaviour
         AudioSource isPlaying;
         AudioSource isWaiting;
 
-        if (m_bgm1.isPlaying)
+        if (m_bgm1.timeSamples > m_bgm2.timeSamples)
         {
             isPlaying = m_bgm1;
             isWaiting = m_bgm2;
@@ -150,8 +150,8 @@ public class AudioManager : MonoBehaviour
         float fadeDur = m_fadeDuration * _request.FadeOverride;
         float isWaitingVol = _request.Music.Volume * _request.VolumeOverride;
 
-        if (fadeDur < 0.01f)
-            fadeDur = 0.01f;
+        if (fadeDur < 0.025f)
+            fadeDur = 0.025f;
 
         QueueSong(isWaiting, isWaitingVol, isPlaying, fadeDur);
 
