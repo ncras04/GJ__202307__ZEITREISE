@@ -34,11 +34,13 @@ public class UI_Highscore : MonoBehaviour
         GetHighscoreValues();
         DisplayHighscore();
 
-        GameManager.Instance.TimeHighscore.OnAddNewHighscore += AddNewHighscore;
+        //GameManager.Instance.TimeHighscore.OnAddNewHighscore += AddNewHighscore;
     }
 
-    private void AddNewHighscore()
+    public void AddNewHighscore(string _name, float _time)
     {
+        SavePlayerPref(_name, _time);
+
         GetHighscoreValues();
         DisplayHighscore ();
 
@@ -67,7 +69,8 @@ public class UI_Highscore : MonoBehaviour
         m_highScores.Clear();
         m_dicValues.Clear();
 
-        m_highScores = GameManager.Instance.TimeHighscore.HighScores;
+        LoadPlayerPrefs();
+        //m_highScores = GameManager.Instance.TimeHighscore.HighScores;
         m_dicValues = m_highScores.Keys.ToList() ;
 
         m_dicValues.Sort();
@@ -91,6 +94,50 @@ public class UI_Highscore : MonoBehaviour
             { 
                 m_places[j].ChangePlace("---", 0);
             }
+        }
+    }
+
+    private void SavePlayerPref(string _name, float _time)
+    {
+        m_highScores.Add(_time, _name);
+
+        var _highscoreList = m_highScores.ToList();
+
+        _highscoreList = m_highScores.OrderBy(s => s.Key).ToList();
+
+        m_highScores.Clear();
+
+        int index = 0;
+
+        foreach (var highScore in _highscoreList)
+        {
+            m_highScores.Add(highScore.Key, highScore.Value);
+            PlayerPrefs.SetString("highScore" + index + "title", highScore.Value);
+            PlayerPrefs.SetFloat("highScore" + index + "time", highScore.Key);
+
+            index++;
+        }
+
+        PlayerPrefs.SetInt("amount", index);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadPlayerPrefs()
+    {
+        if (!PlayerPrefs.HasKey("amount"))
+        {
+            Debug.LogWarning("No Highscores found!");
+            return;
+        }
+
+        m_highScores = new Dictionary<float, string>();
+        int amount = PlayerPrefs.GetInt("amounts");
+
+        for (int index = 0; index < amount; index++)
+        {
+            var title = PlayerPrefs.GetString("highScore" + index + "title");
+            var value = PlayerPrefs.GetFloat("highScore" + index + "time");
+            m_highScores.Add(value, title);
         }
     }
 }
