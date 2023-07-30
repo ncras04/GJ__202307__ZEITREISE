@@ -15,17 +15,29 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameState GameState { set; get; } = GameState.WaitingForPlayers;
+    private GameState _gameState;
+
+    public GameState GameState
+    {
+        set
+        {
+            _gameState = value;
+            OnGameStateChanged?.Invoke(value);
+        }
+        get => _gameState;
+    }
 
     [field: SerializeField] public PlayerManager PlayerManager { set; get; }
 
     [field: SerializeField] public TimeHighscore TimeHighscore { set; get; }
     [field: SerializeField] public TimeManager TimeManager { set; get; }
 
-    [Header("Settings"), SerializeField] private float countDownTime = 3;
-    
-    
+    [SerializeField] private GlobalInventory _globalInventory;
 
+    [Header("Settings"), SerializeField] private float countDownTime = 3;
+
+
+    public event Action<GameState> OnGameStateChanged;
     public event Action OnGameStarted;
 
     private void Awake()
@@ -38,6 +50,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        _globalInventory.ResetData();
 
         PlayerManager.OnNextPlayerJoined += OnPlayerJoined;
     }
@@ -65,7 +79,6 @@ public class GameManager : MonoBehaviour
     private void TimeManagerOnOnTimerEnds()
     {
         if(TimeHighscore != null) TimeHighscore.StartTimer();
-        Debug.Log("Test");
 
         PlayerManager.GetTopPlayer(true).GetComponent<PlayerInput>().ActivateInput();
         PlayerManager.GetTopPlayer(false).GetComponent<PlayerInput>().ActivateInput();

@@ -24,8 +24,6 @@ public class HeartSystem : MonoBehaviour
             m_failedPanel.SetActive(false);
         }
 
-        //m_globalInventory.ResetData();
-
         for (int i = 0; i < (int) m_globalInventory.Health * 2 - 1; i += 2)
         {
             if (m_lifeHearts.transform.GetChild(i).gameObject != null)
@@ -41,7 +39,7 @@ public class HeartSystem : MonoBehaviour
             }
         }
 
-        m_globalInventory.OnHealthChanged += Damage;
+        m_globalInventory.OnGetDamage += Damage;
         m_globalInventory.OnDeath += OnDeath;
     }
 
@@ -52,8 +50,6 @@ public class HeartSystem : MonoBehaviour
 
     private void Damage(float _damageAmount)
     {
-        Debug.Log(_damageAmount.ToString());
-
         for (int i = m_lifehearts.Count - 1; i >= 0; i--)
         {
             if (m_lifehearts[i].gameObject != null)
@@ -84,6 +80,14 @@ public class HeartSystem : MonoBehaviour
         //Maybe Red blinking Hearts
 
         //Failed Screen
-        m_failedPanel.gameObject.SetActive(true);
+
+        if (m_failedPanel)
+        {
+            m_failedPanel.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Du hurensohn du musst das UI noch zuweisen oder erstellen. WTF");
+        }
     }
 }
