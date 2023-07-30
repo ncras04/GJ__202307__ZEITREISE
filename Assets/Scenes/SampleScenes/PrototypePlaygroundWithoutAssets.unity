@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18119264, g: 0.22678584, b: 0.30733043, a: 1}
+  m_IndirectSpecularColor: {r: 0.000017644148, g: 0.000000029633098, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,6 +207,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -259,6 +269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -507,6 +522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -598,6 +618,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -651,6 +676,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -686,6 +721,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -741,6 +781,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -764,6 +814,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -819,6 +874,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -842,6 +907,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -896,6 +966,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -1238,6 +1318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1251,6 +1336,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -1305,6 +1400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -1453,6 +1553,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -1505,6 +1610,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -1605,6 +1720,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -1657,6 +1777,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -1923,6 +2053,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -1976,6 +2111,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -1999,6 +2144,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -2053,6 +2208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -2240,6 +2400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -2357,6 +2522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -2450,6 +2620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -2483,6 +2658,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -2537,6 +2717,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -2840,6 +3030,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -2893,6 +3093,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -2927,6 +3132,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -2981,6 +3196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -3042,6 +3262,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -3094,6 +3324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -3608,6 +3843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -3954,6 +4194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -4046,6 +4291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2c332b911ba7d9488f7655f3ebd3d3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4135,6 +4385,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -4187,6 +4447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -4625,6 +4890,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -4677,6 +4952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -4926,6 +5206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5080,6 +5365,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -5536,6 +5826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5549,6 +5844,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -5603,6 +5903,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -5686,6 +5996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5833,6 +6148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5998,6 +6318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -6019,6 +6344,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -6073,6 +6408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -6432,6 +6772,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6510,6 +6855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7069,6 +7419,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7156,6 +7511,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -7258,6 +7618,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWindow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b30407f12527bd74b9c81161f488c9ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7331,6 +7696,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7350,6 +7720,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -7404,6 +7784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -7595,6 +7980,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -7647,6 +8037,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -7739,6 +8139,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -7840,6 +8245,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -7892,6 +8307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -8204,6 +8624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -8225,6 +8650,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -8279,6 +8709,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -8395,6 +8835,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -8626,6 +9071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -8722,6 +9172,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -8775,6 +9230,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -8798,6 +9263,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -8853,10 +9328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
-      propertyPath: m_CastShadows
-      value: 0
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -9359,6 +9834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -9386,6 +9866,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -9440,6 +9925,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -9672,6 +10167,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9744,6 +10244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9818,6 +10323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9890,6 +10400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9969,6 +10484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10051,6 +10571,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -10342,6 +10867,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -10394,6 +10924,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -10477,6 +11017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10700,6 +11245,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -10752,6 +11307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -11192,6 +11752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -11385,7 +11950,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.179993
+      value: -48.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
@@ -11439,6 +12004,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -11460,6 +12030,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -11514,6 +12094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -11699,6 +12284,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -11751,6 +12346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -12238,6 +12838,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -12290,6 +12895,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -12460,6 +13075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12532,6 +13152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12724,6 +13349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -12751,6 +13381,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -12805,6 +13440,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -12906,6 +13551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13059,6 +13709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13368,6 +14023,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13459,6 +14119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13531,6 +14196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14147,6 +14817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14228,6 +14903,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -14321,6 +15001,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -14426,6 +15111,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -14830,6 +15520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -14910,6 +15605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15154,6 +15854,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15552,6 +16257,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -15605,6 +16320,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -15639,6 +16359,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -15693,6 +16423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -16192,6 +16927,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -16244,6 +16989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -16344,6 +17094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16486,6 +17241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16577,6 +17337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -16657,6 +17422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16743,6 +17513,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16828,6 +17603,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16909,6 +17689,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -17282,6 +18067,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -17335,6 +18125,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -17364,6 +18164,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -17418,6 +18223,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -17827,6 +18642,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17840,6 +18660,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -17894,6 +18719,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -17982,6 +18817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b30407f12527bd74b9c81161f488c9ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18074,6 +18914,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -18155,6 +19000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18227,6 +19077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18311,6 +19166,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -18363,6 +19228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -18458,6 +19328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18543,6 +19418,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18624,6 +19504,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
@@ -18816,6 +19701,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -18868,6 +19763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -19645,6 +20545,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19658,6 +20563,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -19712,6 +20622,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -19795,6 +20715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20036,6 +20961,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20182,6 +21112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20398,6 +21333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20518,6 +21458,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -20570,6 +21515,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -20818,6 +21773,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -20870,6 +21835,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -21130,6 +22100,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21208,6 +22183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21736,6 +22716,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -21788,6 +22778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -22104,6 +23099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22176,6 +23176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22274,6 +23279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -22360,6 +23370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22681,6 +23696,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22770,6 +23790,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -22822,6 +23847,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -23016,6 +24051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23318,6 +24358,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23403,6 +24448,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -23424,6 +24474,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -23478,6 +24538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -23744,6 +24809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -23825,6 +24895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23897,6 +24972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24083,6 +25163,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -24135,6 +25225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -24303,6 +25398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24519,6 +25619,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiPillar
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24597,6 +25702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24687,6 +25797,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -24739,6 +25859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -25054,6 +26179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25703,6 +26833,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -25755,6 +26890,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -25839,6 +26984,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25852,6 +27002,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -25907,6 +27062,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -25942,6 +27107,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -25997,6 +27167,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -26020,6 +27200,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -26074,6 +27259,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -26250,6 +27445,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWall (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26407,6 +27607,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -26459,6 +27669,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -26877,6 +28092,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -26929,6 +28149,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -27012,6 +28242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27182,6 +28417,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -27235,6 +28480,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -27269,6 +28519,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -27323,6 +28583,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -27559,6 +28824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiPillar (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9a6770dac884c34f977203ae6b8078c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27933,6 +29203,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
@@ -27985,6 +29265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -28098,6 +29383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -28201,6 +29491,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -28253,6 +29548,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -28423,6 +29728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 089962762740feb4595b9f1dcc8848a4,
+        type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
@@ -28444,6 +29754,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -28499,6 +29819,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -28533,6 +29858,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 822472023}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -28588,6 +29918,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_CastShadows
@@ -28611,6 +29951,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 358632110}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -28665,6 +30015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -28801,6 +30156,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -28853,6 +30213,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -28932,6 +30302,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -28984,6 +30359,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d38124cc7877ba245bf0d1ff4dcbaa3a,
         type: 3}
@@ -29504,6 +30889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SciFiWall (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d62ff9e2f07047b7edc1cfafb4944,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour
 
     public bool IsSwapped { get => isSwapped; set => isSwapped = value; }
 
+    public int PlayerAmount = 0;
+
     public event Action<int> OnNextPlayerJoined;
          
     private void Awake()

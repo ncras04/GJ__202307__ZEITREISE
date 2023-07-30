@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class UI_Countdown : MonoBehaviour
 {
+    [Header("Elements")] [SerializeField] private GameObject countDownElement;
+    [SerializeField] private GameObject WaitingForPlayer;
+    
     [Header("Animation Curve")]
     [SerializeField]
     private AnimationCurve m_animationCurve;
