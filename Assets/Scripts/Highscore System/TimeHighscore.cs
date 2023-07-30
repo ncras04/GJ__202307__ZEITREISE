@@ -9,7 +9,7 @@ public class TimeHighscore : MonoBehaviour
     [SerializeField] private float animationTime;
     [SerializeField] AnimationCurve lerpingCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
-    private float _highscoreTime;
+    public static float _highscoreTime;
 
     private float _animatedTime;
 
@@ -36,6 +36,8 @@ public class TimeHighscore : MonoBehaviour
     private bool highScoreHasAlreadyBeenLoaded = false;
     private bool hasStarted;
 
+    public event Action OnAddNewHighscore;
+
     public void Stop()
     {
         isStopped = true;
@@ -59,6 +61,8 @@ public class TimeHighscore : MonoBehaviour
     public void StartTimer()
     {
         hasStarted = true;
+        _highscoreTime = 0;
+        _animatedTime = 0;
     }
 
     public void AddCustomTime(float amount)
@@ -115,6 +119,8 @@ public class TimeHighscore : MonoBehaviour
         PlayerPrefs.Save();
 
         highScoreHasAlreadyBeenLoaded = false;
+        
+        OnAddNewHighscore?.Invoke();
     }
 
     private void Load()

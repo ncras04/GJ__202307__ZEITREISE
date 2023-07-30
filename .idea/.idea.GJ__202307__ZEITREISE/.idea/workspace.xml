@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="abab1818-7c8d-4a7c-9ab4-665786e769d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GJ__202307__ZEITREISE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GJ__202307__ZEITREISE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerFuture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerFuture.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerPast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayerPast.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScenes/ManagerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScenes/ManagerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScenes/PrototypePlaygroundWithoutAssets.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScenes/PrototypePlaygroundWithoutAssets.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlobalInventory/GlobalInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalInventory/GlobalInventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/scifi/Floor/SciFiFloor_New.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Highscore System/TimeHighscore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Highscore System/TimeHighscore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerHittable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerHittable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Scripts/UI_Countdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Scripts/UI_Countdown.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +18,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/UI/Scripts/UI_Highscore.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -73,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1690693830278</updated>
-      <workItem from="1690693832188" duration="5981000" />
+      <workItem from="1690693832188" duration="7062000" />
     </task>
     <servers />
   </component>
