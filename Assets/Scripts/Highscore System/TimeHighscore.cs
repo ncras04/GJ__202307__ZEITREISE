@@ -34,6 +34,8 @@ public class TimeHighscore : MonoBehaviour
     private bool highScoreHasAlreadyBeenLoaded = false;
     private bool hasStarted;
 
+    public event Action OnAddNewHighscore;
+
     private void Update()
     {
         if (!hasStarted)
@@ -104,10 +106,12 @@ public class TimeHighscore : MonoBehaviour
             index++;
         }
 
-        PlayerPrefs.SetInt("amounts", index);
+        PlayerPrefs.SetInt("amount", index);
         PlayerPrefs.Save();
 
         highScoreHasAlreadyBeenLoaded = false;
+
+        OnAddNewHighscore?.Invoke();
     }
 
     private void Load()
@@ -119,7 +123,7 @@ public class TimeHighscore : MonoBehaviour
         }
 
         _highScores = new Dictionary<float, string>();
-        int amount = PlayerPrefs.GetInt("amounts");
+        int amount = PlayerPrefs.GetInt("amount");
 
         for (int index = 0; index < amount; index++)
         {
