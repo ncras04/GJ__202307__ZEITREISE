@@ -131,7 +131,7 @@ public class UI_Highscore : MonoBehaviour
         }
 
         m_highScores = new Dictionary<float, string>();
-        int amount = PlayerPrefs.GetInt("amounts");
+        int amount = PlayerPrefs.GetInt("amount");
 
         for (int index = 0; index < amount; index++)
         {
