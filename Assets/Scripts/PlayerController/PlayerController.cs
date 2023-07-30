@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int maxNumberOfJumps = 1;
     [SerializeField] float fallSpeedMultiplier = 5f;
     [SerializeField] float jumpTime = .5f;
-    [SerializeField] GameObject dustLandPrefab;
     bool fallFaster;
     int currentNumberOfJumps;
     bool canJump = true;
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimationCurve dashCurve;
     [SerializeField] float dashCooldown = 1f;
     bool canDash = true;
-    Vector2 dashDirection = Vector2.zero;
 
     // Make it an event.
     public event Action InteractionHandler;
@@ -48,12 +46,22 @@ public class PlayerController : MonoBehaviour
     public Rigidbody Rb { get => rb; set => rb = value; }
 
     bool wantsToSwap;
+    [Header("Particle Effects related:")]
+    [SerializeField] GameObject dustLandPrefab;
+    [SerializeField] ParticleSystem dustRunningEffect;
+    [SerializeField] ParticleSystem dashEffect;
+    [SerializeField] GameObject swapDesireEffect;
+    [SerializeField] GameObject swapEffect;
+    
 
     [SerializeField] PhysicMaterial physicMaterial;
     Rigidbody rb;
     Collider col;
 
     public float CurrentMovementSpeed => Rb.velocity.sqrMagnitude;
+
+    public bool WantsToSwap { get => wantsToSwap; set => wantsToSwap = value; }
+
     public bool IsJumping;
     public bool IsDashing;
     
@@ -76,7 +84,6 @@ public class PlayerController : MonoBehaviour
         moveAction.performed += (context) =>
         {
             movement.x = context.ReadValue<Vector2>().x;
-            dashDirection = movement;
             // Check if rotation really works...
             if (movement.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
             else if (movement.x < 0)
@@ -94,16 +101,14 @@ public class PlayerController : MonoBehaviour
         jumpAction.Enable();
 
         swapAction = actionMap.FindAction("Swap");
-        swapAction.performed += (context) =>
-        {
-            wantsToSwap = true;
-            OnSwappingCall?.Invoke(wantsToSwap);
-            Debug.Log("context.duration");
+        swapAction.started += (context) => { if (swapDesireEffect != null) swapDesireEffect.SetActive(true); };
+        swapAction.performed += (context) =>{
+            wantsToSwap = true;      
         };
-        swapAction.canceled += (context) =>
-        {
+        swapAction.canceled += (context) =>{
             wantsToSwap = false;
-            OnSwappingCall?.Invoke(wantsToSwap);
+            if (swapDesireEffect != null)
+                swapDesireEffect.SetActive(false);
         };
         swapAction.Enable();
 
@@ -131,8 +136,11 @@ public class PlayerController : MonoBehaviour
         if (lastLookAtVeloctiy.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         else if (lastLookAtVeloctiy.x < 0)
             transform.rotation = Quaternion.Euler(0f, -90f, 0f);
-        
-        
+
+        if (rb.velocity.x > .2f && dustRunningEffect != null)
+            dustRunningEffect.Play();
+        else
+            dustRunningEffect.Stop();
     }
 
     private void FixedUpdate()
@@ -176,6 +184,8 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(StartDashTimer(dashDuration, storeJump));
             IsDashing = true;
             IsJumping = false;
+            if (dashEffect != null)
+                dashEffect.Play();
         }
     }
 
@@ -185,7 +195,7 @@ public class PlayerController : MonoBehaviour
         while (dashTimer < dashDuration)
         {
             dashTimer += Time.deltaTime;
-            Rb.velocity = new Vector2(dashCurve.Evaluate(dashTimer / dashDuration) * dashForce * dashDirection.x, 0f);
+            Rb.velocity = new Vector2(dashCurve.Evaluate(dashTimer / dashDuration) * dashForce * (transform.rotation == Quaternion.Euler(0f, 90f, 0f) ? 1f : -1f), 0f);
             //dashDuration -= Time.deltaTime;
             yield return null;
         }
@@ -262,6 +272,15 @@ public class PlayerController : MonoBehaviour
         {
             controller.Explode(10, collision.GetContact(0).point, 0.6f, 2f);
             CameraShaker.Instance.ShakeCamera(2f, 0.5f);
+        }
+    }
+
+    public void TeleportPlayer(Vector3 newPosition)
+    {
+        transform.position = newPosition;
+        if(swapEffect != null)
+        {
+            Instantiate(swapEffect, transform.position + new Vector3(0f,.5f,-.2f), Quaternion.identity);
         }
     }
 }

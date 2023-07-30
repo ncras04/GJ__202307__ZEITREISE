@@ -82,8 +82,6 @@ MonoBehaviour:
   maxNumberOfJumps: 1
   fallSpeedMultiplier: 20
   jumpTime: 0.5
-  dustLandPrefab: {fileID: 6680881829282734981, guid: dc9cb1253cc24ef4191da177f69d0fa4,
-    type: 3}
   dashDuration: 0.2
   dashForce: 250
   dashCurve:
@@ -174,6 +172,12 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  dustLandPrefab: {fileID: 6680881829282734981, guid: dc9cb1253cc24ef4191da177f69d0fa4,
+    type: 3}
+  dustRunningEffect: {fileID: 0}
+  dashEffect: {fileID: 0}
+  swapDesireEffect: {fileID: 0}
+  swapEffect: {fileID: 0}
   physicMaterial: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49, type: 2}
   IsJumping: 0
   IsDashing: 0
