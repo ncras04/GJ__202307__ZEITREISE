@@ -69,8 +69,8 @@ public class Weapon : MonoBehaviour
             Debug.LogError("No Particle Prefab was set, you idiot");
         }
 
-        
-        CameraShaker.Instance.ShakeCamera(2, 0.5f);
+
+        CameraShaker.Instance.ShakeCamera(.3f, 0.4f);
         sfx.Add(AudioSFX.Request(shootSound));
         
         _globalInventory.Ammonition--;

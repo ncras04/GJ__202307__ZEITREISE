@@ -18,6 +18,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Transform targetGroupHelper;
 
     public bool IsSwapped { get => isSwapped; set => isSwapped = value; }
+    public PlayerController[] Players { get => players; set => players = value; }
+    public bool PlayersReady { get; private set; }
 
     public int PlayerAmount = 0;
 
@@ -31,29 +33,29 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if (players != null && players.Length == 2 && players[0] != null && players[1] != null)
-        {
-            targetGroupHelper.position = 
-                new Vector2((players[0].transform.position.x + players[1].transform.position.x) * 0.5f,targetGroupHelper.position.y);
-        }
-        if (players == null || players.Length != 2) return;
+        //if (Players != null && Players.Length == 2 && Players[0] != null && Players[1] != null)
+        //{
+        //    targetGroupHelper.position = 
+        //        new Vector2((Players[0].transform.position.x + Players[1].transform.position.x) * 0.5f,targetGroupHelper.position.y);
+        //}
+        if (Players == null || Players.Length != 2) return;
 
         // Check for players swapping:
         if (justSwapped == false && 
-            players[0].WantsToSwap && players[1].WantsToSwap &&
-            players[0].CanSwap && players[1].CanSwap)
+            Players[0].WantsToSwap && Players[1].WantsToSwap &&
+            Players[0].CanSwap && Players[1].CanSwap)
         {
             // position change:
-            Vector3 tmpPos = players[0].transform.position;
-            players[0].TeleportPlayer(players[1].transform.position);
-            players[0].Rb.position = players[1].transform.position;
-            players[1].TeleportPlayer(tmpPos);
-            players[1].Rb.position = tmpPos;
+            Vector3 tmpPos = Players[0].transform.position;
+            Players[0].TeleportPlayer(Players[1].transform.position);
+            Players[0].Rb.position = Players[1].transform.position;
+            Players[1].TeleportPlayer(tmpPos);
+            Players[1].Rb.position = tmpPos;
 
             // velo change:
-            Vector2 tmpVelocity = players[0].Rb.velocity;
-            players[0].Rb.velocity = players[1].Rb.velocity;
-            players[1].Rb.velocity = tmpVelocity;
+            Vector2 tmpVelocity = Players[0].Rb.velocity;
+            Players[0].Rb.velocity = Players[1].Rb.velocity;
+            Players[1].Rb.velocity = tmpVelocity;
 
             isSwapped = !isSwapped;
             justSwapped = true;
@@ -81,12 +83,13 @@ public class PlayerManager : MonoBehaviour
         }
         else if (inputManager.playerCount == 2)
         {
-            players = FindObjectsOfType<PlayerController>();
-            if (players.Length == 2)
+            Players = FindObjectsOfType<PlayerController>();
+            if (Players.Length == 2)
             {
                 OnNextPlayerJoined?.Invoke(2);
-                targetGroup.m_Targets[0].target = players[0].transform;
-                targetGroup.m_Targets[1].target = players[1].transform;
+                targetGroup.m_Targets[0].target = Players[0].transform;
+                targetGroup.m_Targets[1].target = Players[1].transform;
+                PlayersReady = true;
             }
             else
             {
@@ -102,17 +105,17 @@ public class PlayerManager : MonoBehaviour
     /// <returns>The top or bottom player.</returns>
     public PlayerController GetTopPlayer(bool isTop = true)
     {
-        if (players.Length == 2)
+        if (Players.Length == 2)
         {
             if (isTop)
             {
-                if (!isSwapped) return players[0];
-                else return players[1];
+                if (!isSwapped) return Players[0];
+                else return Players[1];
             }
             else
             {
-                if (!isSwapped) return players[1];
-                else return players[0];
+                if (!isSwapped) return Players[1];
+                else return Players[0];
             }
         }
         else

@@ -74,6 +74,5 @@ public class CameraShaker : MonoBehaviour
         noiseProfile.m_NoiseProfile = shakeNoiseSettings;
         noiseProfile.m_AmplitudeGain += intensity;
         noiseProfile.m_FrequencyGain = 2f;
-        Debug.Log(noiseProfile.m_AmplitudeGain);
     }
 }

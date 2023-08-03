@@ -9,19 +9,18 @@ using WeaponSystem;
 [SelectionBase, RequireComponent(typeof(PlayerInput), typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] bool isFuturePlayer;
     [Header("Movement related:")]
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float maxXVelocity = 12f;
     private Vector2 movement = Vector2.zero;
+    private Vector2 lastLookAtVeloctiy;
     [Header("Jump related:")]
-    [SerializeField] float jumpForceUpMultiplier = 10f;
+    [SerializeField] float jumpTime = 0.5f;
+    [SerializeField] float jumpForce = 10f;
     [SerializeField] AnimationCurve jumpCurve;
-    [SerializeField] int maxNumberOfJumps = 1;
-    [SerializeField] float fallSpeedMultiplier = 5f;
-    [SerializeField] float jumpTime = .5f;
-    bool fallFaster;
-    int currentNumberOfJumps;
-    bool canJump = true;
+    bool canJump;
+    [SerializeField] Transform groundCheckPosition;
 
     [Header("Dash related:")]
     [SerializeField] float dashDuration = 1f;
@@ -36,36 +35,35 @@ public class PlayerController : MonoBehaviour
 
     private InputActionAsset inputAsset;
     InputActionMap actionMap;
-    public InputAction moveAction;
-    public InputAction jumpAction;
-    public InputAction swapAction;
-    public InputAction interactAction;
-    public InputAction dashAction;
-
-    public event Action<bool> OnSwappingCall;
-    public bool CanSwap { get; set; } = true;
-    public Rigidbody Rb { get => rb; set => rb = value; }
+    private InputAction moveAction;
+    private InputAction jumpAction;
+    private InputAction swapAction;
+    [HideInInspector]public InputAction interactAction;
+    private InputAction dashAction;
 
     bool wantsToSwap;
+    public bool CanSwap { get; set; } = true;
+    public Rigidbody Rb { get => rb; private set => rb = value; }
+
+
     [Header("Particle Effects related:")]
     [SerializeField] GameObject dustLandPrefab;
     [SerializeField] ParticleSystem dustRunningEffect;
     [SerializeField] ParticleSystem dashEffect;
     [SerializeField] GameObject swapDesireEffect;
     [SerializeField] GameObject swapEffect;
-    
+    [Header("Sound related:")]
     [SerializeField] SoundFXRequestCollection sfx;
     [SerializeField] AudioEvent landingSound;
     [SerializeField] AudioEvent walkingSound;
     [SerializeField] AudioEvent jumpSound;
     [SerializeField] AudioEvent switchSound;
     
-
-    [SerializeField] PhysicMaterial physicMaterial;
     Rigidbody rb;
     Collider col;
-
-    float moveCheckTimer = 4f;
+    [SerializeField] PhysicMaterial basePhysicsMaterial;
+    [SerializeField] PhysicMaterial jumpPhysicsMaterial;
+    [SerializeField] LayerMask groundLayer;
 
     public float CurrentMovementSpeed => Rb.velocity.sqrMagnitude;
 
@@ -78,10 +76,9 @@ public class PlayerController : MonoBehaviour
     {
         Rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
+        col.material = basePhysicsMaterial;
 
         // Get the input action.
-        //controls = new PlayerControls();
-        //actionMap = controls.Player;
         inputAsset = GetComponent<PlayerInput>().actions;
         actionMap = inputAsset.FindActionMap("Player");
         actionMap.Enable();
@@ -100,7 +97,6 @@ public class PlayerController : MonoBehaviour
         };
         moveAction.canceled += (context) =>
         {
-            // Check if rotation really works...
             movement = Vector2.zero;
         };
         moveAction.Enable();
@@ -132,8 +128,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<PlayerInput>().DeactivateInput();
     }
 
-    private Vector2 lastLookAtVeloctiy;
-
     private void Update()
     {
         if (Rb.velocity.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
@@ -141,35 +135,17 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, -90f, 0f);
 
         if (movement != Vector2.zero) lastLookAtVeloctiy = movement;
-        
+
         if (lastLookAtVeloctiy.x > 0) transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         else if (lastLookAtVeloctiy.x < 0)
             transform.rotation = Quaternion.Euler(0f, -90f, 0f);
 
-        if (rb.velocity.x > .2f && dustRunningEffect != null)
+        if (Mathf.Abs(rb.velocity.x) > .1f && !dustRunningEffect.isPlaying)
             dustRunningEffect.Play();
-        else
+        else if (Mathf.Abs(rb.velocity.x) < .05f && dustRunningEffect.isPlaying || dustRunningEffect.isPlaying && IsJumping)
             dustRunningEffect.Stop();
 
-        // Delete later:
-        CheckPlayerMovement();
-    }
-
-    void CheckPlayerMovement()
-    {
-        if(rb.velocity.magnitude == 0)
-        {
-            moveCheckTimer -= Time.deltaTime;
-            if(moveCheckTimer < 0)
-            {
-                rb.AddForce(Vector2.up * 15f,ForceMode.Impulse);
-                moveCheckTimer = 4f;
-            }
-        }
-        else
-        {
-            moveCheckTimer = 4f;
-        }
+        GroundCheck();
     }
 
     private void FixedUpdate()
@@ -177,13 +153,6 @@ public class PlayerController : MonoBehaviour
         // Move the player.
         if(Mathf.Abs(rb.velocity.x) < maxXVelocity)
             Rb.AddForce(movement * movementSpeed);
-        if (fallFaster)
-        {
-            Rb.AddForce(Vector2.down * fallSpeedMultiplier);
-        }
-        
-        //var tmp = rb.velocity.normalized;
-        // rb.velocity = Vector3.Min(rb.velocity, tmp * maxVelocity);
     }
 
     #region Interaction
@@ -203,14 +172,9 @@ public class PlayerController : MonoBehaviour
         {
             canDash = false;
             Rb.useGravity = false;
-            bool storeJump = canJump;
             canJump = false;
-            //rb.AddForce(dashDirection * dashForce, ForceMode.Impulse);
-            // Zero out y velocity.
-            //Vector2 velo = rb.velocity;
-            //velo.y = 0f;
-            //rb.velocity = velo;
-            StartCoroutine(StartDashTimer(dashDuration, storeJump));
+
+            StartCoroutine(StartDashTimer(dashDuration));
             IsDashing = true;
             IsJumping = false;
             if (dashEffect != null)
@@ -218,19 +182,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator StartDashTimer(float dashDuration, bool jumpStore)
+    IEnumerator StartDashTimer(float dashDuration)
     {
         float dashTimer = 0f;
         while (dashTimer < dashDuration)
         {
             dashTimer += Time.deltaTime;
-            Rb.velocity = new Vector2(dashCurve.Evaluate(dashTimer / dashDuration) * dashForce * (transform.rotation == Quaternion.Euler(0f, 90f, 0f) ? 1f : -1f), 0f);
-            //dashDuration -= Time.deltaTime;
+            Rb.velocity = new Vector2((transform.rotation == Quaternion.Euler(0f, 90f, 0f) ? 1f : -1f) * dashForce * dashCurve.Evaluate(dashTimer / dashDuration),0f);
             yield return null;
         }
 
         Rb.useGravity = true;
-        canJump = jumpStore;
         StartCoroutine(StartDashCooldown(dashCooldown));
     }
 
@@ -243,7 +205,6 @@ public class PlayerController : MonoBehaviour
             dashCooldown -= Time.deltaTime;
             yield return null;
         }
-
         canDash = true;
     }
 
@@ -253,55 +214,74 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        if (canJump && currentNumberOfJumps > 0)
+        if (canJump)
         {
-            StartCoroutine(StartJumpSpeedUp(jumpTime));
-            currentNumberOfJumps--;
-            //canJump = currentNumberOfJumps <= 0 ? false : true;
-
-            sfx.Add(AudioSFX.Request(jumpSound));
-            
-            IsJumping = true;
+            StartCoroutine(StartJump(jumpTime));
+            StartCoroutine(StartGroundCheck());
+            sfx.Add(AudioSFX.Request(jumpSound));                     
         }
     }
 
-    IEnumerator StartJumpSpeedUp(float jumpTime)
-    {
+    IEnumerator StartJump(float jumpTime)
+    {      
         float timer = 0f;
         while (timer < jumpTime)
         {
             timer += Time.deltaTime;
-            rb.velocity += new Vector3(0f, jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier * Time.deltaTime,0f);
-            //rb.AddForce(jumpCurve.Evaluate(timer / jumpTime) * jumpForceUpMultiplier * Vector2.up);
+            rb.velocity += new Vector3(0f, jumpCurve.Evaluate(timer / jumpTime) * jumpForce * Time.deltaTime,0f);
             yield return null;
         }
-        fallFaster = true;
+    }
+    IEnumerator StartGroundCheck()
+    {
+        float timer = 0.2f;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        col.material = jumpPhysicsMaterial;
+        IsJumping = true;
+        canJump = false;
     }
 
-    public void ResetJumps()
+    public void ResetJumps(bool playLandSound)
     {
         canJump = true;
-        currentNumberOfJumps = maxNumberOfJumps;
-        col.material = null;
-        fallFaster = false;
-        Instantiate(dustLandPrefab, transform.position, Quaternion.identity);
-        
-        sfx.Add(AudioSFX.Request(landingSound));
+        Instantiate(dustLandPrefab, transform.position, Quaternion.identity);   
+        if(playLandSound)
+            sfx.Add(AudioSFX.Request(landingSound));
         IsJumping = false;
+        //Rb.drag = 0.3f;
+        col.material = basePhysicsMaterial;
     }
 
     public void LeftGround()
     {
-        col.material = physicMaterial;
+        Rb.drag = 0f;
+    }
+
+    void GroundCheck()
+    {
+        if (!canJump  && Physics.CheckSphere(groundCheckPosition.position, 0.05f, groundLayer))
+        {
+            if(!IsDashing)
+                ResetJumps(true);
+            else
+                ResetJumps(false);
+        }
     }
 
     #endregion
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.TryGetComponent(out Diamond controller))
+        if(isFuturePlayer && IsDashing && collision.transform.TryGetComponent(out IHittable controller))
         {
-            controller.Explode(10, collision.GetContact(0).point, 0.6f, 2f);
+            //if(collision.transform.TryGetComponent(out Diamond diamond))
+            //    diamond.Explode(10, collision.GetContact(0).point, 0.6f, 2f);
+                
+            controller.OnHit(1);
             CameraShaker.Instance.ShakeCamera(2f, 0.5f);
         }
     }

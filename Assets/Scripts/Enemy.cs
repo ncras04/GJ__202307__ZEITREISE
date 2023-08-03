@@ -129,6 +129,8 @@ public class Enemy : MonoBehaviour
                 GameObject projectile = Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
                 projectile.transform.LookAt(victim.transform.position + new Vector3(0, victim.transform.localScale.y / 2,0));
                 StartCoroutine(Reload());
+
+                CameraShaker.Instance.ShakeCameraAdditive(0.3f, 0.4f);
             }
         }
         else

@@ -18,7 +18,7 @@ public class ButtonController : MonoBehaviour
     {
         if(other.TryGetComponent(out PlayerController player))
         {
-            if(Vector2.Dot(player.Rb.velocity * -1, Vector2.up) > triggerRange)
+            if(Vector2.Dot(player.Rb.velocity * -1, Vector2.up) > triggerRange && player.Rb.velocity.magnitude >= triggerVelocity)
             {
                 //Debug.Log("playervelo: " + player.Rb.velocity.magnitude);
                 onButtontTriggerEvent?.Invoke();

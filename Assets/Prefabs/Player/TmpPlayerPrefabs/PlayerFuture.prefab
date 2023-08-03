@@ -837,6 +837,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5311476732828825075}
   m_LocalEulerAnglesHint: {x: 20.78115, y: -98.13041, z: -64.06565}
+--- !u!1 &1412950520816424480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474265650784121147}
+  m_Layer: 6
+  m_Name: GroundCheckPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &474265650784121147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412950520816424480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6456405130535554808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497657162093584587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,7 +3399,7 @@ GameObject:
   - component: {fileID: 8195781395554145669}
   - component: {fileID: 6005676852924132741}
   - component: {fileID: 6046740619250954468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerFuture
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3388,12 +3419,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 5300291785732148227}
   - {fileID: 7484551120572892041}
   - {fileID: 1547191915673004739}
   - {fileID: 329373928060086751}
   - {fileID: 6484392527872166495}
   - {fileID: 7404054373502475129}
+  - {fileID: 474265650784121147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &5441260300491089681
@@ -3408,38 +3439,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9601fddd169fb904fa732934512d5050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFuturePlayer: 1
   movementSpeed: 20
-  maxXVelocity: 7
-  jumpForceUpMultiplier: 40
+  maxXVelocity: 6
+  jumpTime: 0.4
+  jumpForce: 80
   jumpCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0.0001776955
       value: 1
-      inSlope: -2
-      outSlope: -2
+      inSlope: -0.050828025
+      outSlope: -0.050828025
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.767371
     - serializedVersion: 3
-      time: 1.0066189
-      value: 0
-      inSlope: -0
-      outSlope: -0
+      time: 0.3595847
+      value: 0.26132524
+      inSlope: -5.1253653
+      outSlope: -5.1253653
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.058985807
+      outWeight: 0.11805662
+    - serializedVersion: 3
+      time: 0.6552183
+      value: -0.13282843
+      inSlope: -3.0207164
+      outSlope: -3.0207164
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2957726
+      outWeight: 0.07728737
+    - serializedVersion: 3
+      time: 0.9992706
+      value: -1.0015756
+      inSlope: 0.0127500715
+      outSlope: 0.0127500715
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.39508647
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxNumberOfJumps: 1
-  fallSpeedMultiplier: 30
-  jumpTime: 0.4
+  groundCheckPosition: {fileID: 474265650784121147}
   dashDuration: 0.2
-  dashForce: 35
+  dashForce: 30
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -3492,47 +3541,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dashCooldown: 1
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: b803e0ba-292c-4c4c-9469-331eecbe075b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 1
-  jumpAction:
-    m_Name: Jump
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 7e170a38-ab1b-4c08-8702-2ce0ca9ab166
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  swapAction:
-    m_Name: Swap
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 736b11c7-6b3b-45ed-adc2-a15cbfb514df
-    m_Processors: 
-    m_Interactions: Hold
-    m_SingletonActionBindings: []
-    m_Flags: 0
   interactAction:
     m_Name: Interact
     m_Type: 1
     m_ExpectedControlType: Button
     m_Id: 3a5f02b8-db65-432c-9583-2ae30b7289a2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  dashAction:
-    m_Name: Dash
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: fab60c00-7225-4881-a5c7-3de6b86e37c4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -3549,8 +3562,14 @@ MonoBehaviour:
   walkingSound: {fileID: 11400000, guid: f63c71f8421bb0a418ee266b64d9e47c, type: 2}
   jumpSound: {fileID: 11400000, guid: 412067a674236984e9ea9584bb8762d7, type: 2}
   switchSound: {fileID: 11400000, guid: c59eb11d34d934949b71e87619b3e5a0, type: 2}
-  physicMaterial: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49, type: 2}
-  IsJumping: 0
+  basePhysicsMaterial: {fileID: 13400000, guid: a8b9cc7c7cc8b9d448c27abf3ca258df,
+    type: 2}
+  jumpPhysicsMaterial: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49,
+    type: 2}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 447
+  IsJumping: 1
   IsDashing: 0
 --- !u!114 &725725409648646835
 MonoBehaviour:
@@ -3664,7 +3683,7 @@ Rigidbody:
   m_GameObject: {fileID: 4773014479071116609}
   serializedVersion: 4
   m_Mass: 1.5
-  m_Drag: 0
+  m_Drag: 0.3
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -3681,7 +3700,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &2717610794696970922
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3689,7 +3708,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4773014479071116609}
-  m_Material: {fileID: 13400000, guid: 8121077efd12df24386003bb8734db49, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7263,72 +7282,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5311476732828825075}
   m_LocalEulerAnglesHint: {x: -71.79154, y: -155.5119, z: -37.024994}
---- !u!1 &9078023981882516908
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5300291785732148227}
-  - component: {fileID: 428078539860123767}
-  - component: {fileID: 8285552376762907724}
-  m_Layer: 0
-  m_Name: JumpTrigger
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5300291785732148227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9078023981882516908}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6456405130535554808}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &428078539860123767
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9078023981882516908}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8285552376762907724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9078023981882516908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423004134579281429bae0abb778a293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9176492806880101559
 GameObject:
   m_ObjectHideFlags: 0

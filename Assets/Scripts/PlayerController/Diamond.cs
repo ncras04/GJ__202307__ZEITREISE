@@ -32,35 +32,43 @@ public class Diamond : MonoBehaviour, IHittable
         var rbs = brokenObject.GetComponentsInChildren<Rigidbody>();
         foreach (var rb in rbs)
         {
-            if(Random.value > 0.4f)
+            if(Random.value > 0.4f && trailEffect != null)
             {
                 Instantiate(trailEffect,rb.transform.position,rb.transform.rotation).transform.parent = rb.transform;
             }
             rb.AddExplosionForce(explosionStrength, explosionPosition, radius, upwardsModifier, ForceMode.Impulse);
             //Destroy(rb.gameObject, 3f);
-            StartCoroutine(FadeOutFracture(5f, rb.gameObject.GetComponent<Renderer>()));
+            StartCoroutine(FadeOutFracture(10f, rb.gameObject.GetComponent<MeshRenderer>()));
         }
+        Destroy(gameObject, 11f);
     }
 
-    IEnumerator FadeOutFracture(float fadeoutTime, Renderer rend)
+    IEnumerator FadeOutFracture(float fadeoutTime, MeshRenderer rend)
     {
         float timer = 0f;
         Color startColor = rend.material.color;
-        Color endColor = startColor;
-        endColor.a = 0f;
+        Vector3 tmpScale = rend.transform.localScale;
+
         while (timer < fadeoutTime)
         {
             timer += Time.deltaTime;
 
-            rend.material.color = Color.Lerp(startColor, endColor,fadeoutCurve.Evaluate( timer / fadeoutTime));
+            // need consider emiission...
+            startColor.a = 1 - fadeoutCurve.Evaluate(timer / fadeoutTime);
+            rend.material.color = startColor;
+
+            tmpScale.x = 1 - fadeoutCurve.Evaluate(timer / fadeoutTime);
+            tmpScale.y = tmpScale.x;
+            tmpScale.z = tmpScale.x;
+            rend.transform.localScale = tmpScale;
             yield return null;
 
         }
-        Destroy(rend.gameObject, 0f);
+        //Destroy(rend.gameObject, 0f);
     }
 
     public void OnHit(float damage)
     {
-        Explode(10, transform.position, 0.6f, 2f);
+        Explode(3f, transform.position, 0.6f, 2f);
     }
 }

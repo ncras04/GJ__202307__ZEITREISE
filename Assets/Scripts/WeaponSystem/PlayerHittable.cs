@@ -13,6 +13,12 @@ public class PlayerHittable : MonoBehaviour, IHittable
     [SerializeField] private SoundFXRequestCollection sfx;
     [SerializeField] private AudioEvent damageSound;
     
+    FollowOrbController followOrbController;
+
+    private void Awake()
+    {
+        followOrbController = FindObjectOfType<FollowOrbController>();
+    }
 
     public void OnHit(float damage)
     {
@@ -27,7 +33,9 @@ public class PlayerHittable : MonoBehaviour, IHittable
 
         if (_globalInventory.IsDeath)
         {
-            Instantiate(replacedElement, transform.position, transform.rotation);
+            var tmp = Instantiate(replacedElement, transform.position, transform.rotation);
+            if (followOrbController != null)
+                followOrbController.ExecuteNavigationCommand(tmp.transform, true, 2f, 0, 5, 3f);
             Destroy(gameObject);
         }
     }

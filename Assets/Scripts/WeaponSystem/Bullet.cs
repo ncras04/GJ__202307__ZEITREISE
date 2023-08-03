@@ -42,6 +42,8 @@ public class Bullet : MonoBehaviour
         }
         
         Destroy(gameObject);
+        CameraShaker.Instance.ShakeCamera(2f, 0.4f);
+
         var myTransform = transform;
 
         if (interactionParticle != null)
@@ -56,6 +58,7 @@ public class Bullet : MonoBehaviour
         if (hittetObject != null)
         {
             hittetObject.OnHit(damage);
+            CameraShaker.Instance.ShakeCamera(2f, 0.4f);
         }
     }
 }
