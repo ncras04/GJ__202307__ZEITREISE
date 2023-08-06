@@ -8,6 +8,8 @@ TagManager:
   - Player2
   - Enemy
   - AudioManager
+  - Crate
+  - Collectable
   layers:
   - Default
   - TransparentFX

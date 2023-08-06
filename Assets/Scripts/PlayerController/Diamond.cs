@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class Diamond : MonoBehaviour, IHittable
     private MeshRenderer rend;
     private Collider col;
 
+
     private void Awake()
     {
         brokenObject.SetActive(false);
@@ -25,6 +27,15 @@ public class Diamond : MonoBehaviour, IHittable
         col.enabled = false;
         Instantiate(shatterEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
         brokenObject.SetActive(true);
+
+        if (TryGetComponent(out RotateObject rotater))
+        {
+            rotater.CurrentTween.Kill();
+        }
+        if (TryGetComponent(out FloatingObject floater))
+        {
+            floater.CurrentTween.Kill();
+        }
     }
     public void Explode(float explosionStrength, Vector3 explosionPosition, float radius, float upwardsModifier)
     {
@@ -69,6 +80,6 @@ public class Diamond : MonoBehaviour, IHittable
 
     public void OnHit(float damage)
     {
-        Explode(3f, transform.position, 0.6f, 2f);
+        Explode(2.5f, transform.position, 0.6f, 2f);
     }
 }

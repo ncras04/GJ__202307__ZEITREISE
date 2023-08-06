@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using WeaponSystem;
@@ -21,6 +22,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimationCurve jumpCurve;
     bool canJump;
     [SerializeField] Transform groundCheckPosition;
+    bool doGroundCheck = true;
+    bool inAir;
+    public bool IsJumping;
+    bool playJumpFeedback = true;
 
     [Header("Dash related:")]
     [SerializeField] float dashDuration = 1f;
@@ -28,8 +33,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimationCurve dashCurve;
     [SerializeField] float dashCooldown = 1f;
     bool canDash = true;
+    public bool IsDashing;
 
-    // Make it an event.
+
     public event Action InteractionHandler;
 
 
@@ -69,9 +75,13 @@ public class PlayerController : MonoBehaviour
 
     public bool WantsToSwap { get => wantsToSwap; set => wantsToSwap = value; }
 
-    public bool IsJumping;
-    public bool IsDashing;
-    
+    [Header("Tweening Feedback related:")]
+    [SerializeField] bool useTweenFeedback = true;
+    [SerializeField] Transform tweenTransform;
+    Tween landingTween;
+    Tween scalingXTween;
+    Tween scalingYTween;
+
     private void Awake()
     {
         Rb = GetComponent<Rigidbody>();
@@ -82,6 +92,12 @@ public class PlayerController : MonoBehaviour
         inputAsset = GetComponent<PlayerInput>().actions;
         actionMap = inputAsset.FindActionMap("Player");
         actionMap.Enable();
+
+        //landingTween = transform.DOShakeScale(.5f);
+        if(tweenTransform == null)
+        {
+            useTweenFeedback = false;
+        }
     }
 
     private void OnEnable()
@@ -172,9 +188,15 @@ public class PlayerController : MonoBehaviour
         {
             canDash = false;
             Rb.useGravity = false;
+            bool jumpStore = canJump;
             canJump = false;
-
-            StartCoroutine(StartDashTimer(dashDuration));
+            StartCoroutine(StartDashTimer(dashDuration,jumpStore));
+            if (useTweenFeedback)
+            {
+                tweenTransform.DOScaleX(1.75f, dashDuration).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo).SetLink(transform.gameObject);
+                tweenTransform.DOScaleY(.65f, dashDuration).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo).SetLink(transform.gameObject);
+            }
+                
             IsDashing = true;
             IsJumping = false;
             if (dashEffect != null)
@@ -182,7 +204,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator StartDashTimer(float dashDuration)
+    IEnumerator StartDashTimer(float dashDuration, bool jumpStore)
     {
         float dashTimer = 0f;
         while (dashTimer < dashDuration)
@@ -191,15 +213,18 @@ public class PlayerController : MonoBehaviour
             Rb.velocity = new Vector2((transform.rotation == Quaternion.Euler(0f, 90f, 0f) ? 1f : -1f) * dashForce * dashCurve.Evaluate(dashTimer / dashDuration),0f);
             yield return null;
         }
-
+        canJump = jumpStore;
+        // Eventually erease this, but sometimes no doing the ground check will prevent from jumpiing again.
+        if(!inAir && !canJump)
+            doGroundCheck = true;
+        IsDashing = false;
         Rb.useGravity = true;
         StartCoroutine(StartDashCooldown(dashCooldown));
+        tweenTransform.DORewind();
     }
 
     IEnumerator StartDashCooldown(float dashCooldown)
-    {
-        IsDashing = false;
-        
+    {              
         while (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
@@ -223,7 +248,10 @@ public class PlayerController : MonoBehaviour
     }
 
     IEnumerator StartJump(float jumpTime)
-    {      
+    {
+        canJump = false;
+        col.material = jumpPhysicsMaterial;
+        IsJumping = true;
         float timer = 0f;
         while (timer < jumpTime)
         {
@@ -240,36 +268,49 @@ public class PlayerController : MonoBehaviour
             timer -= Time.deltaTime;
             yield return null;
         }
-        col.material = jumpPhysicsMaterial;
-        IsJumping = true;
-        canJump = false;
+        doGroundCheck = true;      
     }
 
-    public void ResetJumps(bool playLandSound)
+    public void ResetJumps()
     {
         canJump = true;
-        Instantiate(dustLandPrefab, transform.position, Quaternion.identity);   
-        if(playLandSound)
-            sfx.Add(AudioSFX.Request(landingSound));
         IsJumping = false;
-        //Rb.drag = 0.3f;
         col.material = basePhysicsMaterial;
-    }
-
-    public void LeftGround()
-    {
-        Rb.drag = 0f;
+        doGroundCheck = false;
+        
+        if(playJumpFeedback)
+        {
+            StartCoroutine(FeedbackResetTimer(0.3f));
+            Instantiate(dustLandPrefab, transform.position, Quaternion.identity);
+            sfx.Add(AudioSFX.Request(landingSound));
+            if(useTweenFeedback)
+                tweenTransform.DOScale(.7f, .1f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo).SetLink(transform.gameObject);
+        }
+        else
+        {
+            tweenTransform.DORewind();
+        }     
     }
 
     void GroundCheck()
     {
-        if (!canJump  && Physics.CheckSphere(groundCheckPosition.position, 0.05f, groundLayer))
+        if (Physics.Raycast(groundCheckPosition.position, Vector3.down, out RaycastHit hitInfo, 3f, groundLayer))
         {
-            if(!IsDashing)
-                ResetJumps(true);
-            else
-                ResetJumps(false);
+            inAir = hitInfo.distance > 0.25f ? true : false;
+            if (inAir) doGroundCheck = true;
         }
+        if(doGroundCheck && Physics.Raycast(groundCheckPosition.position, Vector3.down, 0.1f, groundLayer))
+            ResetJumps() ;
+    }
+
+    IEnumerator FeedbackResetTimer(float timer)
+    {
+        playJumpFeedback = false;
+        while (timer > 0f)
+        {
+            timer -= Time.deltaTime; yield return null;
+        }
+        playJumpFeedback = true;
     }
 
     #endregion
@@ -281,8 +322,15 @@ public class PlayerController : MonoBehaviour
             //if(collision.transform.TryGetComponent(out Diamond diamond))
             //    diamond.Explode(10, collision.GetContact(0).point, 0.6f, 2f);
                 
-            controller.OnHit(1);
+            controller.OnHit(2);
             CameraShaker.Instance.ShakeCamera(2f, 0.5f);
+        }else if(!isFuturePlayer && IsDashing && (collision.transform.CompareTag("Crate") || collision.transform.CompareTag("Collectable")) && collision.transform.TryGetComponent(out IHittable target))
+        {
+            target.OnHit(1);
+            CameraShaker.Instance.ShakeCamera(2f, 0.5f);
+        }else if(collision.transform.TryGetComponent(out Diamond diamond))
+        {
+            diamond.transform.GetComponent<IHittable>().OnHit(1);
         }
     }
 
@@ -291,9 +339,33 @@ public class PlayerController : MonoBehaviour
         transform.position = newPosition;
         if(swapEffect != null)
         {
-            Instantiate(swapEffect, transform.position + new Vector3(0f,.5f,-.2f), Quaternion.identity);
+            var effect = Instantiate(swapEffect, transform.position, Quaternion.identity);
+            effect.transform.DOScale(1.2f, .4f).SetEase(Ease.Linear).SetLink(transform.gameObject);
+            StartCoroutine(UpdateTeleportEffect(effect.transform));
         }
-        
+        //+new Vector3(0f, .5f, -.2f)
         sfx.Add(AudioSFX.Request(switchSound));
+
+        if (useTweenFeedback)
+            tweenTransform.DOScale(.2f, .2f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo).SetLink(transform.gameObject);
+    }
+
+    IEnumerator UpdateTeleportEffect(Transform teleportTransform)
+    {
+        float timer = 0.8f;
+        while (timer > 0f)
+        {
+            timer -=Time.deltaTime;
+            teleportTransform.position = transform.position;
+            yield return null;
+        }
+        Destroy(teleportTransform.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        //scalingXTween.Kill();
+        //scalingYTween.Kill();
+        //landingTween.Kill();
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Global Inventory", menuName = "Global/Global Inventory", order = 1)]
 public class GlobalInventory : ScriptableObject
 {
-    private const int MaxAmmonition = 15;
-    private const int AmmonitionStartValue = 15;
+    private const int MaxAmmonition = 50;
+    private const int AmmonitionStartValue = 50;
     private const int HealthStartValue = 3;
     
     private int _ammonition;

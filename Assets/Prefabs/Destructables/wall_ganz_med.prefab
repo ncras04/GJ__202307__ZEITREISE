@@ -121,4 +121,5 @@ MonoBehaviour:
   maxHealth: 1
   destroyedVersion: {fileID: 2774975207851490781, guid: 638d0e31a510d7e41bca5c37ea4bf570,
     type: 3}
-  _deathParticle: {fileID: 0}
+  _deathParticle: {fileID: 7301399982901391501, guid: 3c1f811d56d2adf488f46adab9970c03,
+    type: 3}

@@ -301,7 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerRange: 0.6
-  triggerVelocity: 10
+  triggerVelocity: 7
+  onlyTriggerOnce: 1
   onButtontTriggerEvent:
     m_PersistentCalls:
       m_Calls:
@@ -317,3 +318,5 @@ MonoBehaviour:
           m_StringArgument: Enter
           m_BoolArgument: 0
         m_CallState: 2
+  triggeredActionTimeline: 0
+  buttonRenderer: {fileID: 8357543305288770183}

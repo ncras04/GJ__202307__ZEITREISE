@@ -133,7 +133,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!96 &4474515660886783414
 TrailRenderer:
@@ -381,7 +381,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!96 &4204974307824512119
 TrailRenderer:
@@ -666,7 +666,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!96 &3554807932563207953
 TrailRenderer:
@@ -914,7 +914,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!96 &6343221852005110169
 TrailRenderer:
@@ -1162,7 +1162,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!96 &6149190066409356952
 TrailRenderer:
@@ -1290,9 +1290,11 @@ GameObject:
   - component: {fileID: 1337618154536832838}
   - component: {fileID: 58656470461375208}
   - component: {fileID: 7513903791154840226}
+  - component: {fileID: 157930596338719237}
+  - component: {fileID: 6883860935468081488}
   m_Layer: 0
   m_Name: GemFull
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1307,7 +1309,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.35, y: 4.47, z: -0.09375763}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3334748, y: 0.3334748, z: 0.3334748}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 274365658492301378}
@@ -1424,6 +1426,37 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &157930596338719237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321114153999440500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1e2d1bff778f248b17854a92c21de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 1
+  positionOffest: {x: 0, y: 0.35, z: 0}
+  floatingSpeed: {x: 1, y: 3, z: 1}
+  easeMethod: 1
+  loopAmount: -1
+--- !u!114 &6883860935468081488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321114153999440500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91be6045e7232b549984a7521164cb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationVector: {x: 0, y: 360, z: 0}
+  rotationDuration: 4
 --- !u!1 &8655323535830883977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1590,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!96 &5077123630622763047
 TrailRenderer:
