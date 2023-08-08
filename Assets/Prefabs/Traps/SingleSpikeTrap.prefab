@@ -174,6 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 100
+  hitEffect: {fileID: 5715678763642495561, guid: 76e36cc4a2422a143a507549f5d22f63,
+    type: 3}
 --- !u!1 &4020522261477748185
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,3 +359,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 100
+  hitEffect: {fileID: 5715678763642495561, guid: 76e36cc4a2422a143a507549f5d22f63,
+    type: 3}

@@ -6,7 +6,7 @@ public class GlobalInventory : ScriptableObject
 {
     private const int MaxAmmonition = 50;
     private const int AmmonitionStartValue = 50;
-    private const int HealthStartValue = 3;
+    private const int HealthStartValue = 30;
     
     private int _ammonition;
 

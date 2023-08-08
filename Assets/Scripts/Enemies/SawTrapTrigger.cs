@@ -7,6 +7,7 @@ public class SawTrapTrigger : MonoBehaviour
 {
 
     [SerializeField] private float pushBackForce = 80f;
+    [SerializeField] private GameObject hitEffect;
 
 
     private void OnTriggerEnter(Collider other)
@@ -18,6 +19,11 @@ public class SawTrapTrigger : MonoBehaviour
         if (other.TryGetComponent(out Rigidbody targetRigidbody))
         {
             targetRigidbody.AddForce((other.transform.position - transform.position).normalized * pushBackForce, ForceMode.Impulse);
+            if(hitEffect != null)
+            {
+
+                Instantiate(hitEffect, other.transform.position, Quaternion.identity);
+            }
         }
     }
 }

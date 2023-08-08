@@ -70,7 +70,7 @@ public class Weapon : MonoBehaviour
         }
 
 
-        CameraShaker.Instance.ShakeCamera(.3f, 0.4f);
+        CameraShaker.Instance.ShakeCamera(1.6f, 0.4f);
         sfx.Add(AudioSFX.Request(shootSound));
         
         _globalInventory.Ammonition--;
